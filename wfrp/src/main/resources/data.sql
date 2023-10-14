@@ -1,4 +1,5 @@
-CREATE TABLE IF NOT EXISTS RACES
+#  wybór rasy
+CREATE TABLE IF NOT EXISTS RACES_ROLL
 (
     ID         BIGINT AUTO_INCREMENT PRIMARY KEY,
     NAME       VARCHAR(255) NOT NULL,
@@ -6,7 +7,7 @@ CREATE TABLE IF NOT EXISTS RACES
     CHANCE_MAX INT          NOT NULL
 );
 
-INSERT INTO RACES (NAME, CHANCE_MIN, CHANCE_MAX)
+INSERT INTO RACES_ROLL (NAME, CHANCE_MIN, CHANCE_MAX)
 VALUES ('Człowiek', 1, 90),
        ('Niziołek', 91, 94),
        ('Krasnolud', 95, 98),
@@ -14,12 +15,13 @@ VALUES ('Człowiek', 1, 90),
        ('Leśny elf', 100, 100);
 COMMIT;
 
-CREATE TABLE IF NOT EXISTS PROFESSIONS
+# wybór profesji
+CREATE TABLE IF NOT EXISTS PROFESSIONS_ROLL
 (
     ID          BIGINT AUTO_INCREMENT PRIMARY KEY,
     CLASS       VARCHAR(255) NOT NULL,
     NAME        VARCHAR(255) NOT NULL,
-    DESCRIPTION VARCHAR(255),
+    DESCRIPTION TEXT,
     HU_MIN      INT,
     HU_MAX      INT,
     DW_MIN      INT,
@@ -32,8 +34,8 @@ CREATE TABLE IF NOT EXISTS PROFESSIONS
     W_ELF_MAX   INT
 );
 
-INSERT INTO PROFESSIONS (CLASS, NAME, DESCRIPTION, HU_MIN, HU_MAX, DW_MIN, DW_MAX, HAL_MIN, HAL_MAX, H_ELF_MIN,
-                         H_ELF_MAX, W_ELF_MIN, W_ELF_MAX)
+INSERT INTO PROFESSIONS_ROLL (CLASS, NAME, DESCRIPTION, HU_MIN, HU_MAX, DW_MIN, DW_MAX, HAL_MIN, HAL_MAX, H_ELF_MIN,
+                              H_ELF_MAX, W_ELF_MIN, W_ELF_MAX)
 VALUES ('UCZENI', 'APTEKARKA', '', 1, 1, 1, 1, 1, 1, 1, 2, NULL, NULL),
        ('UCZENI', 'CZARODZIEJ', '', 2, 2, NULL, NULL, NULL, NULL, 3, 6, 1, 4),
        ('UCZENI', 'INŻYNIER', '', 3, 3, 2, 4, 2, 2, NULL, NULL, NULL, NULL),
@@ -100,6 +102,13 @@ VALUES ('UCZENI', 'APTEKARKA', '', 1, 1, 1, 1, 1, 1, 1, 2, NULL, NULL),
        ('WOJOWNICY', 'ŻOŁNIERZ', '', 97, 100, 98, 100, 98, 100, 99, 100, 97, 100);
 COMMIT;
 
+# losowanie atrybutów
+# ustalenie punktów przeznaczenia, szczęścia, bohatera, determinacji
+# ustalenie szybkości
+# rozdzielenie 5 rozwinięć na 3 cechy z profesji
+
+# przypisanie umiejętności i talentów rasowych
+# pomiędzy 8 umiejętności profesji można rozdysponować 40 rozwinięć
 CREATE TABLE IF NOT EXISTS SKILLS
 (
     ID          BIGINT AUTO_INCREMENT PRIMARY KEY,
@@ -107,7 +116,7 @@ CREATE TABLE IF NOT EXISTS SKILLS
     ATTRIBUTE   VARCHAR(3)   NOT NULL,
     IS_ADVANCED BOOLEAN      NOT NULL,
     IS_GROUP    BOOLEAN      NOT NULL,
-    DESCRIPTION VARCHAR(255)
+    DESCRIPTION TEXT
 );
 
 INSERT INTO SKILLS (NAME, ATTRIBUTE, IS_ADVANCED, IS_GROUP, DESCRIPTION)
@@ -163,9 +172,9 @@ CREATE TABLE IF NOT EXISTS TALENTS
     ID          BIGINT AUTO_INCREMENT PRIMARY KEY,
     NAME        VARCHAR(255) NOT NULL,
     MAX_VALUE   INT,
-    BONUS   VARCHAR(3),
+    BONUS       VARCHAR(3),
     TESTED      VARCHAR(255),
-    DESCRIPTION VARCHAR(255)
+    DESCRIPTION TEXT
 );
 
 # MAX_VALUE -1 = brak, 0 = bonus, 1+ = sztywna
@@ -338,3 +347,14 @@ VALUES ('Aptekarz', 0, 'Int', 'Rzemiosło (Aptekarstwo)', ''),
        ('Żelazna Wola', 0, 'SW', 'Zastraszanie (Opanowanie)', ''),
        ('Żyłka Handlowa', 0, 'Ogd', 'Targowanie', '');
 COMMIT;
+
+#  przypisanie wyposażenia z klasy i profesji
+#  przypisanie statusu społecznego
+
+# wybór/losowanie imienia
+# losowanie wieku
+# losowanie koloru oczu
+# losowanie koloru włosów
+# losowanie wzrostu
+
+# KONIEC
