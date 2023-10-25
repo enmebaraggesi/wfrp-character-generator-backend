@@ -1,8 +1,8 @@
 package com.warhammer.wfrp.repository;
 
 import com.warhammer.wfrp.model.ElfNameGeneration;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ElfNameGenerationRepository extends CrudRepository<ElfNameGeneration, Integer> {
+public interface ElfNameGenerationRepository extends JpaRepository<ElfNameGeneration, Integer> {
 
 }

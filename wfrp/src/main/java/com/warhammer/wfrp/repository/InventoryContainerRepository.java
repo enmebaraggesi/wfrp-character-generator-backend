@@ -1,8 +1,9 @@
 package com.warhammer.wfrp.repository;
 
 import com.warhammer.wfrp.model.InventoryContainer;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface InventoryContainerRepository extends CrudRepository<InventoryContainer, Integer> {
+
+public interface InventoryContainerRepository extends JpaRepository<InventoryContainer, Integer> {
 
 }

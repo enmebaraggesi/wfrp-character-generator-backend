@@ -1,8 +1,8 @@
 package com.warhammer.wfrp.repository;
 
 import com.warhammer.wfrp.model.WoodElfEyeColor;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface WoodElfEyeColorRepository extends CrudRepository<WoodElfEyeColor, Integer> {
-
+public interface WoodElfEyeColorRepository extends JpaRepository<WoodElfEyeColor, Integer> {
+    
 }

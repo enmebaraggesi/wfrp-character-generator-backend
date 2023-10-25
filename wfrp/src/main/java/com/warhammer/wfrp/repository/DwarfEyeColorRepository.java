@@ -1,8 +1,8 @@
 package com.warhammer.wfrp.repository;
 
 import com.warhammer.wfrp.model.DwarfEyeColor;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface DwarfEyeColorRepository extends CrudRepository<DwarfEyeColor, Integer> {
-
+public interface DwarfEyeColorRepository extends JpaRepository<DwarfEyeColor, Integer> {
+    
 }

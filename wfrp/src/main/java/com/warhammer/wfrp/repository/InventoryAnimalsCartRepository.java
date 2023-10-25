@@ -1,8 +1,8 @@
 package com.warhammer.wfrp.repository;
 
 import com.warhammer.wfrp.model.InventoryAnimalsCart;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface InventoryAnimalsCartRepository extends CrudRepository<InventoryAnimalsCart, Integer> {
+public interface InventoryAnimalsCartRepository extends JpaRepository<InventoryAnimalsCart, Integer> {
 
 }

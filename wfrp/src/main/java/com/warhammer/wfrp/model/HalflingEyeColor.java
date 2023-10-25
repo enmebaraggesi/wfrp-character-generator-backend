@@ -8,7 +8,7 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "HALFLING_EYE_COLOR")
-public class HalflingEyeColor {
+public class HalflingEyeColor implements EyeColor {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

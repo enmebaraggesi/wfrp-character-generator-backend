@@ -1,8 +1,8 @@
 package com.warhammer.wfrp.repository;
 
 import com.warhammer.wfrp.model.RacesRoll;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface RacesRollRepository extends CrudRepository<RacesRoll, Integer> {
+public interface RacesRollRepository extends JpaRepository<RacesRoll, Integer> {
 
 }

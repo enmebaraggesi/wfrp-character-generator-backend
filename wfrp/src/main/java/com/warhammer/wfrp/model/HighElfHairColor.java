@@ -8,7 +8,7 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "HIGH_ELF_HAIR_COLOR")
-public class HighElfHairColor {
+public class HighElfHairColor implements HairColor {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
