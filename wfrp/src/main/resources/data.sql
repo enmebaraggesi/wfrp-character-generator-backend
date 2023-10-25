@@ -350,46 +350,46 @@ COMMIT;
 
 CREATE TABLE IF NOT EXISTS TALENT_ROLL
 (
-    ID          INT AUTO_INCREMENT PRIMARY KEY,
-    ROLL_MIN    INT          NOT NULL,
-    ROLL_MAX    INT          NOT NULL,
-    TALENT_NAME VARCHAR(255) NOT NULL,
-    FOREIGN KEY (TALENT_NAME) REFERENCES TALENTS (NAME)
+    ID       INT AUTO_INCREMENT PRIMARY KEY,
+    ROLL_MIN INT NOT NULL,
+    ROLL_MAX INT NOT NULL,
+    TALENT   INT,
+    FOREIGN KEY (TALENT) REFERENCES TALENTS (ID)
 );
 
-INSERT INTO TALENT_ROLL (ROLL_MIN, ROLL_MAX, TALENT_NAME)
-VALUES (1, 3, 'Atrakcyjny'),
-       (4, 6, 'Bardzo Silny'),
-       (7, 8, 'Błękitna Krew'),
-       (9, 11, 'Błyskotliwość'),
-       (12, 14, 'Charyzmatyczny'),
-       (15, 17, 'Chodu!'),
-       (18, 20, 'Czujny'),
-       (21, 24, 'Czysta Dusza'),
-       (25, 27, 'Czytanie/Pisanie'),
-       (28, 31, 'Geniusz Arytmetyczny'),
-       (32, 34, 'Naśladowca'),
-       (35, 37, 'Niezwykle Odporny'),
-       (38, 40, 'Oburęczność'),
-       (41, 43, 'Odporny na (Zagrożenie)'),
-       (44, 46, 'Poliglota'),
-       (47, 49, 'Posłuch u Zwierząt'),
-       (50, 52, 'Silne Nogi'),
-       (53, 55, 'Słuch Absolutny'),
-       (56, 58, 'Strzelec Wyborowy'),
-       (59, 62, 'Szczęście'),
-       (63, 66, 'Szósty Zmysł'),
-       (67, 69, 'Szybki Refleks'),
-       (70, 72, 'Talent Arytmetyczny'),
-       (73, 75, 'Tragarz'),
-       (76, 79, 'Twardziel'),
-       (80, 82, 'Urodzony Wojownik'),
-       (83, 85, 'Widzenie w Ciemności'),
-       (86, 88, 'Wyczucie Kierunku'),
-       (89, 91, 'Wyczulony Zmysł'),
-       (92, 94, 'Wytwórca'),
-       (95, 97, 'Zimna Krew'),
-       (98, 100, 'Zręczny');
+INSERT INTO TALENT_ROLL (ROLL_MIN, ROLL_MAX, TALENT)
+VALUES (1, 3, 5),
+       (4, 6, 6),
+       (7, 8, 12),
+       (9, 11, 15),
+       (12, 14, 17),
+       (15, 17, 19),
+       (18, 20, 25),
+       (21, 24, 26),
+       (25, 27, 28),
+       (28, 31, 36),
+       (32, 34, 62),
+       (35, 37, 70),
+       (38, 40, 74),
+       (41, 43, 77),
+       (44, 46, 85),
+       (47, 49, 88),
+       (50, 52, 101),
+       (53, 55, 104),
+       (56, 58, 110),
+       (59, 62, 112),
+       (63, 66, 114),
+       (67, 69, 117),
+       (70, 72, 125),
+       (73, 75, 128),
+       (76, 79, 130),
+       (80, 82, 133),
+       (83, 85, 137),
+       (86, 88, 150),
+       (89, 91, 151),
+       (92, 94, 154),
+       (95, 97, 159),
+       (98, 100, 164);
 
 #  przypisanie wyposażenia z klasy i profesji
 #  przypisanie statusu społecznego
@@ -710,12 +710,12 @@ CREATE TABLE IF NOT EXISTS INVENTORY_WEAPONS
     ID           INT AUTO_INCREMENT PRIMARY KEY,
     TYPE         VARCHAR(25) NOT NULL,
     NAME         VARCHAR(50) NOT NULL,
-    COST         VARCHAR(10) NOT NULL,
+    COST         VARCHAR(20) NOT NULL,
     WEIGHT       VARCHAR(10),
     AVAILABILITY VARCHAR(25) NOT NULL,
     LENGTH       VARCHAR(25) NOT NULL,
-    DAMAGE       VARCHAR(10),
-    TRAITS       VARCHAR(50)
+    DAMAGE       VARCHAR(20),
+    TRAITS       VARCHAR(255)
 );
 
 INSERT INTO INVENTORY_WEAPONS (TYPE, NAME, COST, WEIGHT, AVAILABILITY, LENGTH, DAMAGE, TRAITS)
@@ -787,13 +787,13 @@ COMMIT;
 CREATE TABLE IF NOT EXISTS INVENTORY_AMMO
 (
     ID           INT AUTO_INCREMENT PRIMARY KEY,
-    TYPE         VARCHAR(25) NOT NULL,
+    TYPE         VARCHAR(50) NOT NULL,
     NAME         VARCHAR(50) NOT NULL,
-    COST         VARCHAR(10) NOT NULL,
+    COST         VARCHAR(20) NOT NULL,
     AVAILABILITY VARCHAR(25) NOT NULL,
     LENGTH       VARCHAR(25) NOT NULL,
     DAMAGE       VARCHAR(10),
-    TRAITS       VARCHAR(50)
+    TRAITS       VARCHAR(100)
 );
 
 INSERT INTO INVENTORY_AMMO (TYPE, NAME, COST, AVAILABILITY, LENGTH, DAMAGE, TRAITS)
@@ -814,7 +814,7 @@ CREATE TABLE IF NOT EXISTS INVENTORY_ARMOR
     ID           INT AUTO_INCREMENT PRIMARY KEY,
     TYPE         VARCHAR(25) NOT NULL,
     NAME         VARCHAR(50) NOT NULL,
-    COST         VARCHAR(10) NOT NULL,
+    COST         VARCHAR(20) NOT NULL,
     WEIGHT       VARCHAR(10),
     AVAILABILITY VARCHAR(25) NOT NULL,
     PENALTY      VARCHAR(25),
@@ -845,7 +845,7 @@ CREATE TABLE IF NOT EXISTS INVENTORY_CONTAINERS
 (
     ID           INT AUTO_INCREMENT PRIMARY KEY,
     NAME         VARCHAR(50) NOT NULL,
-    COST         VARCHAR(10) NOT NULL,
+    COST         VARCHAR(20) NOT NULL,
     WEIGHT       VARCHAR(10),
     CONTAINS     INT         NOT NULL,
     AVAILABILITY VARCHAR(25) NOT NULL
@@ -871,7 +871,7 @@ CREATE TABLE IF NOT EXISTS INVENTORY_CLOTHING
 (
     ID           INT AUTO_INCREMENT PRIMARY KEY,
     NAME         VARCHAR(50) NOT NULL,
-    COST         VARCHAR(10) NOT NULL,
+    COST         VARCHAR(20) NOT NULL,
     WEIGHT       VARCHAR(10),
     AVAILABILITY VARCHAR(25) NOT NULL
 );
@@ -905,7 +905,7 @@ CREATE TABLE IF NOT EXISTS INVENTORY_DINING
 (
     ID           INT AUTO_INCREMENT PRIMARY KEY,
     NAME         VARCHAR(50) NOT NULL,
-    COST         VARCHAR(10) NOT NULL,
+    COST         VARCHAR(20) NOT NULL,
     WEIGHT       VARCHAR(10),
     AVAILABILITY VARCHAR(25) NOT NULL
 );
@@ -928,7 +928,7 @@ CREATE TABLE IF NOT EXISTS INVENTORY_TOOLS
 (
     ID           INT AUTO_INCREMENT PRIMARY KEY,
     NAME         VARCHAR(50) NOT NULL,
-    COST         VARCHAR(10) NOT NULL,
+    COST         VARCHAR(20) NOT NULL,
     WEIGHT       VARCHAR(10),
     AVAILABILITY VARCHAR(25) NOT NULL
 );
@@ -980,7 +980,7 @@ CREATE TABLE IF NOT EXISTS INVENTORY_BOOKS
 (
     ID           INT AUTO_INCREMENT PRIMARY KEY,
     NAME         VARCHAR(50) NOT NULL,
-    COST         VARCHAR(10) NOT NULL,
+    COST         VARCHAR(20) NOT NULL,
     WEIGHT       VARCHAR(10),
     AVAILABILITY VARCHAR(25) NOT NULL
 );
@@ -1005,8 +1005,8 @@ CREATE TABLE IF NOT EXISTS INVENTORY_WORK
 (
     ID           INT AUTO_INCREMENT PRIMARY KEY,
     NAME         VARCHAR(50) NOT NULL,
-    COST         VARCHAR(10) NOT NULL,
-    WEIGHT       VARCHAR(10),
+    COST         VARCHAR(20) NOT NULL,
+    WEIGHT       VARCHAR(20),
     AVAILABILITY VARCHAR(25) NOT NULL
 );
 
@@ -1019,7 +1019,7 @@ CREATE TABLE IF NOT EXISTS INVENTORY_ANIMALS_CARTS
 (
     ID           INT AUTO_INCREMENT PRIMARY KEY,
     NAME         VARCHAR(50) NOT NULL,
-    COST         VARCHAR(10) NOT NULL,
+    COST         VARCHAR(20) NOT NULL,
     WEIGHT       VARCHAR(10),
     CONTAINS     INT,
     AVAILABILITY VARCHAR(25) NOT NULL
@@ -1051,7 +1051,7 @@ CREATE TABLE IF NOT EXISTS INVENTORY_POISONS
 (
     ID           INT AUTO_INCREMENT PRIMARY KEY,
     NAME         VARCHAR(50) NOT NULL,
-    COST         VARCHAR(10) NOT NULL,
+    COST         VARCHAR(20) NOT NULL,
     WEIGHT       VARCHAR(10),
     AVAILABILITY VARCHAR(25) NOT NULL
 );
@@ -1071,7 +1071,7 @@ CREATE TABLE IF NOT EXISTS INVENTORY_POTIONS
 (
     ID           INT AUTO_INCREMENT PRIMARY KEY,
     NAME         VARCHAR(50) NOT NULL,
-    COST         VARCHAR(10) NOT NULL,
+    COST         VARCHAR(20) NOT NULL,
     WEIGHT       VARCHAR(10),
     AVAILABILITY VARCHAR(25) NOT NULL
 );
@@ -1091,7 +1091,7 @@ CREATE TABLE IF NOT EXISTS INVENTORY_PROSTHETSES
 (
     ID           INT AUTO_INCREMENT PRIMARY KEY,
     NAME         VARCHAR(50) NOT NULL,
-    COST         VARCHAR(10) NOT NULL,
+    COST         VARCHAR(20) NOT NULL,
     WEIGHT       VARCHAR(10),
     AVAILABILITY VARCHAR(25) NOT NULL
 );
@@ -1110,7 +1110,7 @@ CREATE TABLE IF NOT EXISTS INVENTORY_MISC
 (
     ID           INT AUTO_INCREMENT PRIMARY KEY,
     NAME         VARCHAR(50) NOT NULL,
-    COST         VARCHAR(10) NOT NULL,
+    COST         VARCHAR(20) NOT NULL,
     WEIGHT       VARCHAR(10),
     AVAILABILITY VARCHAR(25) NOT NULL
 );
@@ -1153,7 +1153,7 @@ CREATE TABLE IF NOT EXISTS INVENTORY_HIRELINGS
 (
     ID        INT AUTO_INCREMENT PRIMARY KEY,
     NAME      VARCHAR(50)  NOT NULL,
-    QUICK_JOB VARCHAR(10)  NOT NULL,
+    QUICK_JOB VARCHAR(20)  NOT NULL,
     DAY_JOB   VARCHAR(10)  NOT NULL,
     WEEK_JOB  VARCHAR(25)  NOT NULL,
     ABOUT     VARCHAR(100) NOT NULL
