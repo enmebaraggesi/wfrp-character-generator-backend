@@ -1,4 +1,4 @@
-package com.warhammer.wfrp.model;
+package com.warhammer.wfrp.model.hair;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -7,8 +7,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "HALFLING_EYE_COLOR")
-public class HalflingEyeColor implements EyeColor {
+@Table(name = "HALFLING_HAIR_COLOR")
+public class HalflingHairColor implements HairColor {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

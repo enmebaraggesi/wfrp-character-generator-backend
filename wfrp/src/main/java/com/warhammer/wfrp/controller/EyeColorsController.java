@@ -2,17 +2,17 @@ package com.warhammer.wfrp.controller;
 
 import com.warhammer.wfrp.dto.EyeColorDto;
 import com.warhammer.wfrp.mapper.EyeColorMapper;
-import com.warhammer.wfrp.model.*;
+import com.warhammer.wfrp.model.eyes.*;
 import com.warhammer.wfrp.repository.*;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @RequiredArgsConstructor
 @RestController
-public class EyeColorController {
+public class EyeColorsController {
     
     private final DwarfEyeColorRepository dwarfEyeColorRepository;
     private final HalflingEyeColorRepository halflingEyeColorRepository;
@@ -22,62 +22,67 @@ public class EyeColorController {
     private final EyeColorMapper eyeColorMapper;
     
     @GetMapping("/eyes/dwarfs")
-    public List<EyeColorDto> getAllDwarfEyeColors() {
+    public Set<EyeColorDto> getAllDwarfEyeColors() {
         List<DwarfEyeColor> dwarfEyeColors = dwarfEyeColorRepository.findAll();
         return eyeColorMapper.mapEyeColorListToEyeColorDtoList(List.copyOf(dwarfEyeColors));
     }
     
-    @GetMapping("/eyes/dwarfs/{id}")
-    public EyeColorDto getDwarfEyeColorById(@PathVariable int id) {
-        Optional<DwarfEyeColor> dwarfEyeColor = dwarfEyeColorRepository.findById(id);
+    @GetMapping("/eyes/dwarfs/random")
+    public EyeColorDto getDwarfEyeColorByRandomId() {
+        int result = new Random().nextInt(1, 21);
+        Optional<DwarfEyeColor> dwarfEyeColor = dwarfEyeColorRepository.findById(result);
         return dwarfEyeColor.map(eyeColorMapper::mapEyeColorToEyeColorDto).orElse(null);
     }
     
     @GetMapping("/eyes/halflings")
-    public List<EyeColorDto> getAllHalflingEyeColors() {
+    public Set<EyeColorDto> getAllHalflingEyeColors() {
         List<HalflingEyeColor> halflingEyeColors = halflingEyeColorRepository.findAll();
         return eyeColorMapper.mapEyeColorListToEyeColorDtoList(List.copyOf(halflingEyeColors));
     }
     
-    @GetMapping("/eyes/halflings/{id}")
-    public EyeColorDto getHalflingEyeColorById(@PathVariable int id) {
-        Optional<HalflingEyeColor> halflingEyeColor = halflingEyeColorRepository.findById(id);
+    @GetMapping("/eyes/halflings/random")
+    public EyeColorDto getHalflingEyeColorByRandomId() {
+        int result = new Random().nextInt(1, 21);
+        Optional<HalflingEyeColor> halflingEyeColor = halflingEyeColorRepository.findById(result);
         return halflingEyeColor.map(eyeColorMapper::mapEyeColorToEyeColorDto).orElse(null);
     }
     
     @GetMapping("/eyes/helves")
-    public List<EyeColorDto> getAllHighElfEyeColors() {
+    public Set<EyeColorDto> getAllHighElfEyeColors() {
         List<HighElfEyeColor> highElfEyeColors = highElfEyeColorRepository.findAll();
         return eyeColorMapper.mapEyeColorListToEyeColorDtoList(List.copyOf(highElfEyeColors));
     }
     
-    @GetMapping("/eyes/helves/{id}")
-    public EyeColorDto getHighElvesEyeColorById(@PathVariable int id) {
-        Optional<HighElfEyeColor> highElfEyeColor = highElfEyeColorRepository.findById(id);
+    @GetMapping("/eyes/helves/random")
+    public EyeColorDto getHighElvesEyeColorByRandomId() {
+        int result = new Random().nextInt(1, 21);
+        Optional<HighElfEyeColor> highElfEyeColor = highElfEyeColorRepository.findById(result);
         return highElfEyeColor.map(eyeColorMapper::mapEyeColorToEyeColorDto).orElse(null);
     }
     
     @GetMapping("/eyes/humans")
-    public List<EyeColorDto> getAllHumanEyeColors() {
+    public Set<EyeColorDto> getAllHumanEyeColors() {
         List<HumanEyeColor> humanEyeColors = humanEyeColorRepository.findAll();
         return eyeColorMapper.mapEyeColorListToEyeColorDtoList(List.copyOf(humanEyeColors));
     }
     
-    @GetMapping("/eyes/humans/{id}")
-    public EyeColorDto getHumanEyeColorById(@PathVariable int id) {
-        Optional<HumanEyeColor> humanEyeColor = humanEyeColorRepository.findById(id);
+    @GetMapping("/eyes/humans/random")
+    public EyeColorDto getHumanEyeColorByRandomId() {
+        int result = new Random().nextInt(1, 21);
+        Optional<HumanEyeColor> humanEyeColor = humanEyeColorRepository.findById(result);
         return humanEyeColor.map(eyeColorMapper::mapEyeColorToEyeColorDto).orElse(null);
     }
     
     @GetMapping("/eyes/welves")
-    public List<EyeColorDto> getAllWoodElfEyeColors() {
+    public Set<EyeColorDto> getAllWoodElfEyeColors() {
         List<WoodElfEyeColor> woodElfEyeColors = woodElfEyeColorRepository.findAll();
         return eyeColorMapper.mapEyeColorListToEyeColorDtoList(List.copyOf(woodElfEyeColors));
     }
     
-    @GetMapping("/eyes/welves/{id}")
-    public EyeColorDto getWoodElfEyeColorById(@PathVariable int id) {
-        Optional<WoodElfEyeColor> woodElfEyeColor = woodElfEyeColorRepository.findById(id);
+    @GetMapping("/eyes/welves/random")
+    public EyeColorDto getWoodElfEyeColorByRandomId() {
+        int result = new Random().nextInt(1, 21);
+        Optional<WoodElfEyeColor> woodElfEyeColor = woodElfEyeColorRepository.findById(result);
         return woodElfEyeColor.map(eyeColorMapper::mapEyeColorToEyeColorDto).orElse(null);
     }
 }

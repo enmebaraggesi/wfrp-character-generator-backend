@@ -1,4 +1,4 @@
-package com.warhammer.wfrp.model;
+package com.warhammer.wfrp.model.races;
 
 import jakarta.persistence.*;
 import lombok.Getter;

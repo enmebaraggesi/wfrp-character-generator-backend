@@ -2,17 +2,17 @@ package com.warhammer.wfrp.controller;
 
 import com.warhammer.wfrp.dto.HairColorDto;
 import com.warhammer.wfrp.mapper.HairColorMapper;
-import com.warhammer.wfrp.model.*;
+import com.warhammer.wfrp.model.hair.*;
 import com.warhammer.wfrp.repository.*;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @RequiredArgsConstructor
-@RestController("/hairs")
-public class HairColorController {
+@RestController
+public class HairColorsController {
     
     private final DwarfHairColorRepository dwarfHairColorRepository;
     private final HalflingHairColorRepository halflingHairColorRepository;
@@ -21,63 +21,68 @@ public class HairColorController {
     private final WoodElfHairColorRepository woodElfHairColorRepository;
     private final HairColorMapper hairColorMapper;
     
-    @GetMapping("/dwarfs")
+    @GetMapping("/hair/dwarfs")
     public List<HairColorDto> getAllDwarfHairColors() {
         List<DwarfHairColor> dwarfHairColors = dwarfHairColorRepository.findAll();
         return hairColorMapper.mapHairColorListToHairColorListDto(List.copyOf(dwarfHairColors));
     }
     
-    @GetMapping("/dwarfs/{id}")
-    public HairColorDto getDwarfHairColorById(@PathVariable int id) {
-        Optional<DwarfHairColor> dwarfHairColor = dwarfHairColorRepository.findById(id);
+    @GetMapping("/hair/dwarfs/random")
+    public HairColorDto getDwarfHairColorByRandomId() {
+        int result = new Random().nextInt(1, 21);
+        Optional<DwarfHairColor> dwarfHairColor = dwarfHairColorRepository.findById(result);
         return dwarfHairColor.map(hairColorMapper::mapHairColorToHairColorDto).orElse(null);
     }
     
-    @GetMapping("/halflings")
+    @GetMapping("/hair/halflings")
     public List<HairColorDto> getAllHalflingHairColors() {
         List<HalflingHairColor> halflingHairColors = halflingHairColorRepository.findAll();
         return hairColorMapper.mapHairColorListToHairColorListDto(List.copyOf(halflingHairColors));
     }
     
-    @GetMapping("/halflings/{id}")
-    public HairColorDto getHalflingHairColorById(@PathVariable int id) {
-        Optional<HalflingHairColor> halflingHairColor = halflingHairColorRepository.findById(id);
+    @GetMapping("/hair/halflings/random")
+    public HairColorDto getHalflingHairColorByRandomId() {
+        int result = new Random().nextInt(1, 21);
+        Optional<HalflingHairColor> halflingHairColor = halflingHairColorRepository.findById(result);
         return halflingHairColor.map(hairColorMapper::mapHairColorToHairColorDto).orElse(null);
     }
     
-    @GetMapping("/helves")
+    @GetMapping("/hair/helves")
     public List<HairColorDto> getAllHighElfHairColors() {
         List<HighElfHairColor> highElfHairColors = highElfHairColorRepository.findAll();
         return hairColorMapper.mapHairColorListToHairColorListDto(List.copyOf(highElfHairColors));
     }
     
-    @GetMapping("/helves/{id}")
-    public HairColorDto getHighElvesHairColorById(@PathVariable int id) {
-        Optional<HighElfHairColor> highElfHairColor = highElfHairColorRepository.findById(id);
+    @GetMapping("/hair/helves/random")
+    public HairColorDto getHighElvesHairColorByRandomId() {
+        int result = new Random().nextInt(1, 21);
+        Optional<HighElfHairColor> highElfHairColor = highElfHairColorRepository.findById(result);
         return highElfHairColor.map(hairColorMapper::mapHairColorToHairColorDto).orElse(null);
     }
     
-    @GetMapping("/humans")
+    @GetMapping("/hair/humans")
     public List<HairColorDto> getAllHumanHairColors() {
         List<HumanHairColor> humanHairColors = humanHairColorRepository.findAll();
         return hairColorMapper.mapHairColorListToHairColorListDto(List.copyOf(humanHairColors));
     }
     
-    @GetMapping("/humans/{id}")
-    public HairColorDto getHumanHairColorById(@PathVariable int id) {
-        Optional<HumanHairColor> humanHairColor = humanHairColorRepository.findById(id);
+    @GetMapping("/hair/humans/random")
+    public HairColorDto getHumanHairColorByRandomId() {
+        int result = new Random().nextInt(1, 21);
+        Optional<HumanHairColor> humanHairColor = humanHairColorRepository.findById(result);
         return humanHairColor.map(hairColorMapper::mapHairColorToHairColorDto).orElse(null);
     }
     
-    @GetMapping("/welves")
+    @GetMapping("/hair/welves")
     public List<HairColorDto> getAllWoodElfHairColors() {
         List<WoodElfHairColor> woodElfHairColors = woodElfHairColorRepository.findAll();
         return hairColorMapper.mapHairColorListToHairColorListDto(List.copyOf(woodElfHairColors));
     }
     
-    @GetMapping("/welves/{id}")
-    public HairColorDto getWoodElfHairColorById(@PathVariable int id) {
-        Optional<WoodElfHairColor> woodElfHairColor = woodElfHairColorRepository.findById(id);
+    @GetMapping("/hair/welves/random")
+    public HairColorDto getWoodElfHairColorByRandomId() {
+        int result = new Random().nextInt(1, 21);
+        Optional<WoodElfHairColor> woodElfHairColor = woodElfHairColorRepository.findById(result);
         return woodElfHairColor.map(hairColorMapper::mapHairColorToHairColorDto).orElse(null);
     }
 }
