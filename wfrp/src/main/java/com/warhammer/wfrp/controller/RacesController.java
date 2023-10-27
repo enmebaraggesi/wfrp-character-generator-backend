@@ -3,7 +3,7 @@ package com.warhammer.wfrp.controller;
 import com.warhammer.wfrp.dto.RaceDto;
 import com.warhammer.wfrp.mapper.RacesMapper;
 import com.warhammer.wfrp.model.races.RacesRoll;
-import com.warhammer.wfrp.repository.RacesRollRepository;
+import com.warhammer.wfrp.repository.races.RacesRollRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

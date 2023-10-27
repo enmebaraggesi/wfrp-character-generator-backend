@@ -3,7 +3,7 @@ package com.warhammer.wfrp.controller;
 import com.warhammer.wfrp.dto.HairColorDto;
 import com.warhammer.wfrp.mapper.HairColorMapper;
 import com.warhammer.wfrp.model.hair.*;
-import com.warhammer.wfrp.repository.*;
+import com.warhammer.wfrp.repository.hair.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

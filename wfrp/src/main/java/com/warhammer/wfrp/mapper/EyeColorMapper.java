@@ -11,13 +11,13 @@ import java.util.stream.Collectors;
 @Service
 public class EyeColorMapper {
     
-    public Set<EyeColorDto> mapEyeColorListToEyeColorDtoList(List<EyeColor> colors) {
-        return colors.stream()
-                     .map(this::mapEyeColorToEyeColorDto)
-                     .collect(Collectors.toSet());
-    }
-    
     public EyeColorDto mapEyeColorToEyeColorDto(EyeColor color) {
         return new EyeColorDto(color.getColor());
+    }
+    
+    public Set<EyeColorDto> mapEyeColorListToEyeColorDtoList(List<EyeColor> list) {
+        return list.stream()
+                   .map(this::mapEyeColorToEyeColorDto)
+                   .collect(Collectors.toSet());
     }
 }

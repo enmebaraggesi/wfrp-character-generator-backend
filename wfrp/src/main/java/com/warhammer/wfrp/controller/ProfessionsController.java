@@ -3,8 +3,8 @@ package com.warhammer.wfrp.controller;
 import com.warhammer.wfrp.dto.ProfessionDto;
 import com.warhammer.wfrp.dto.RaceDto;
 import com.warhammer.wfrp.mapper.ProfessionsMapper;
-import com.warhammer.wfrp.model.ProfessionsRoll;
-import com.warhammer.wfrp.repository.ProfessionsRollRepository;
+import com.warhammer.wfrp.model.professions.ProfessionsRoll;
+import com.warhammer.wfrp.repository.professions.ProfessionsRollRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

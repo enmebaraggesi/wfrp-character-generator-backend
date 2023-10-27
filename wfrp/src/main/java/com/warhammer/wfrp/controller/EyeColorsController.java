@@ -3,7 +3,7 @@ package com.warhammer.wfrp.controller;
 import com.warhammer.wfrp.dto.EyeColorDto;
 import com.warhammer.wfrp.mapper.EyeColorMapper;
 import com.warhammer.wfrp.model.eyes.*;
-import com.warhammer.wfrp.repository.*;
+import com.warhammer.wfrp.repository.eyes.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

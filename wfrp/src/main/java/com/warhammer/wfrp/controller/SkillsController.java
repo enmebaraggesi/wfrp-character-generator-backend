@@ -3,7 +3,7 @@ package com.warhammer.wfrp.controller;
 import com.warhammer.wfrp.dto.SkillDto;
 import com.warhammer.wfrp.mapper.SkillMapper;
 import com.warhammer.wfrp.model.skills.Skill;
-import com.warhammer.wfrp.repository.SkillRepository;
+import com.warhammer.wfrp.repository.skills.SkillRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

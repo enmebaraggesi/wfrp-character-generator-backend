@@ -9,17 +9,17 @@ import java.util.List;
 @Service
 public class SkillMapper {
     
-    public List<SkillDto> mapSkillListToSkillDtoList(List<Skill> basicSkills) {
-        return basicSkills.stream()
-                          .map(this::mapSkillToSkillDto)
-                          .toList();
-    }
-    
     private SkillDto mapSkillToSkillDto(Skill skill) {
         return new SkillDto(skill.getName(),
                             skill.getAttribute(),
                             skill.getIsAdvanced(),
                             skill.getIsGroup(),
                             skill.getDescription());
+    }
+    
+    public List<SkillDto> mapSkillListToSkillDtoList(List<Skill> list) {
+        return list.stream()
+                   .map(this::mapSkillToSkillDto)
+                   .toList();
     }
 }

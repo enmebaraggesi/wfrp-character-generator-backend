@@ -13,9 +13,9 @@ public class RacesMapper {
         return new RaceDto(racesRoll.getName());
     }
     
-    public List<RaceDto> mapRacesRollListToRaceDtoList(List<RacesRoll> racesRolls) {
-        return racesRolls.stream()
-                         .map(this::mapRacesRollToRaceDto)
-                         .toList();
+    public List<RaceDto> mapRacesRollListToRaceDtoList(List<RacesRoll> list) {
+        return list.stream()
+                   .map(this::mapRacesRollToRaceDto)
+                   .toList();
     }
 }
