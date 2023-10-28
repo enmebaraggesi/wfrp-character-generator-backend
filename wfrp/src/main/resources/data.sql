@@ -420,286 +420,380 @@ COMMIT;
 # losowanie wieku
 
 # losowanie koloru oczu
-CREATE TABLE IF NOT EXISTS HUMAN_EYE_COLOR
+CREATE TABLE IF NOT EXISTS EYE_COLORS
 (
     ID    INT AUTO_INCREMENT PRIMARY KEY,
-    COLOR VARCHAR(25) NOT NULL
+    COLOR VARCHAR(25) NOT NULL UNIQUE
 );
 
-INSERT INTO HUMAN_EYE_COLOR (COLOR)
+INSERT INTO EYE_COLORS (COLOR)
 VALUES ('Dowolny wybór'),
        ('Zielony'),
        ('Błękitny'),
        ('Niebieski'),
-       ('Niebieski'),
-       ('Niebieski'),
-       ('Niebieski'),
-       ('Blady szary'),
-       ('Blady szary'),
-       ('Blady szary'),
        ('Blady szary'),
        ('Szary'),
-       ('Szary'),
-       ('Szary'),
-       ('Brązowy'),
-       ('Brązowy'),
        ('Brązowy'),
        ('Orzechowy'),
        ('Ciemnobrązowy'),
-       ('Czarny');
-
-CREATE TABLE IF NOT EXISTS DWARF_EYE_COLOR
-(
-    ID    INT AUTO_INCREMENT PRIMARY KEY,
-    COLOR VARCHAR(25) NOT NULL
-);
-
-INSERT INTO DWARF_EYE_COLOR (COLOR)
-VALUES ('Czarny jak węgiel'),
+       ('Czarny'),
+       ('Czarny jak węgiel'),
        ('Szary jak ołów'),
        ('Stalowoszary'),
-       ('Niebieski'),
-       ('Niebieski'),
-       ('Niebieski'),
-       ('Niebieski'),
        ('Brązowy jak ziemia'),
-       ('Brązowy jak ziemia'),
-       ('Brązowy jak ziemia'),
-       ('Brązowy jak ziemia'),
-       ('Ciemnobrązowy'),
-       ('Ciemnobrązowy'),
-       ('Ciemnobrązowy'),
-       ('Orzechowy'),
-       ('Orzechowy'),
-       ('Orzechowy'),
-       ('Zielony'),
        ('Ciemny miedziany'),
-       ('Złoty');
-
-CREATE TABLE IF NOT EXISTS HALFLING_EYE_COLOR
-(
-    ID    INT AUTO_INCREMENT PRIMARY KEY,
-    COLOR VARCHAR(25) NOT NULL
-);
-
-INSERT INTO HALFLING_EYE_COLOR (COLOR)
-VALUES ('Jasnoszary'),
-       ('Szary'),
-       ('Błękitny'),
-       ('Niebieski'),
-       ('Niebieski'),
-       ('Niebieski'),
-       ('Niebieski'),
-       ('Zielony'),
-       ('Zielony'),
-       ('Zielony'),
-       ('Zielony'),
-       ('Orzechowy'),
-       ('Orzechowy'),
-       ('Orzechowy'),
-       ('Brązowy'),
-       ('Brązowy'),
-       ('Brązowy'),
+       ('Złoty'),
+       ('Jasnoszary'),
        ('Miedziany'),
-       ('Ciemnobrązowy'),
-       ('Ciemnobrązowy');
-
-CREATE TABLE IF NOT EXISTS HIGH_ELF_EYE_COLOR
-(
-    ID    INT AUTO_INCREMENT PRIMARY KEY,
-    COLOR VARCHAR(50) NOT NULL
-);
-
-INSERT INTO HIGH_ELF_EYE_COLOR (COLOR)
-VALUES ('Ciemny jak smoła'),
+       ('Ciemny jak smoła'),
        ('Ametystowy'),
        ('Akwamaryna'),
        ('Szafirowy'),
-       ('Szafirowy'),
-       ('Szafirowy'),
-       ('Szafirowy'),
-       ('Turkusowy'),
-       ('Turkusowy'),
-       ('Turkusowy'),
-       ('Turkusowy'),
-       ('Szmaragdowy'),
-       ('Szmaragdowy'),
        ('Szmaragdowy'),
        ('Bursztynowy'),
-       ('Bursztynowy'),
-       ('Bursztynowy'),
-       ('Miedziany'),
+       ('Turkusowy'),
        ('Cytrynowożółty'),
-       ('Złoty');
-
-CREATE TABLE IF NOT EXISTS WOOD_ELF_EYE_COLOR
-(
-    ID    INT AUTO_INCREMENT PRIMARY KEY,
-    COLOR VARCHAR(25) NOT NULL
-);
-
-INSERT INTO WOOD_ELF_EYE_COLOR (COLOR)
-VALUES ('Kości słoniowej'),
+       ('Kości słoniowej'),
        ('Antracyt'),
        ('Zielony jak bluszcz'),
        ('Zielony jak mech'),
-       ('Zielony jak mech'),
-       ('Zielony jak mech'),
-       ('Zielony jak mech'),
        ('Kasztanowy'),
-       ('Kasztanowy'),
-       ('Kasztanowy'),
-       ('Kasztanowy'),
-       ('Kasztanowy'),
-       ('Kasztanowy'),
-       ('Kasztanowy'),
-       ('Ciemnobrązowy'),
-       ('Ciemnobrązowy'),
-       ('Ciemnobrązowy'),
        ('Jasnobrązowy'),
        ('Złotobrązowy'),
        ('Fiołkowy');
 
-# losowanie koloru włosów
-CREATE TABLE IF NOT EXISTS HUMAN_HAIR_COLOR
+CREATE TABLE IF NOT EXISTS HUMAN_EYE_COLOR
 (
-    ID    INT AUTO_INCREMENT PRIMARY KEY,
-    COLOR VARCHAR(25) NOT NULL
+    ID       INT AUTO_INCREMENT PRIMARY KEY,
+    COLOR_ID INT NOT NULL,
+    FOREIGN KEY (COLOR_ID) REFERENCES EYE_COLORS (ID)
 );
 
-INSERT INTO HUMAN_HAIR_COLOR (COLOR)
+INSERT INTO HUMAN_EYE_COLOR (COLOR_ID)
+VALUES (1),
+       (2),
+       (3),
+       (4),
+       (4),
+       (4),
+       (4),
+       (5),
+       (5),
+       (5),
+       (5),
+       (6),
+       (6),
+       (6),
+       (7),
+       (7),
+       (7),
+       (8),
+       (9),
+       (10);
+
+CREATE TABLE IF NOT EXISTS DWARF_EYE_COLOR
+(
+    ID       INT AUTO_INCREMENT PRIMARY KEY,
+    COLOR_ID INT NOT NULL,
+    FOREIGN KEY (COLOR_ID) REFERENCES EYE_COLORS (ID)
+);
+
+INSERT INTO DWARF_EYE_COLOR (COLOR_ID)
+VALUES (11),
+       (12),
+       (13),
+       (4),
+       (4),
+       (4),
+       (4),
+       (14),
+       (14),
+       (14),
+       (14),
+       (9),
+       (9),
+       (9),
+       (8),
+       (8),
+       (8),
+       (2),
+       (15),
+       (16);
+
+CREATE TABLE IF NOT EXISTS HALFLING_EYE_COLOR
+(
+    ID       INT AUTO_INCREMENT PRIMARY KEY,
+    COLOR_ID INT NOT NULL,
+    FOREIGN KEY (COLOR_ID) REFERENCES EYE_COLORS (ID)
+);
+
+INSERT INTO HALFLING_EYE_COLOR (COLOR_ID)
+VALUES (17),
+       (6),
+       (3),
+       (4),
+       (4),
+       (4),
+       (4),
+       (2),
+       (2),
+       (2),
+       (2),
+       (8),
+       (8),
+       (8),
+       (7),
+       (7),
+       (7),
+       (18),
+       (9),
+       (9);
+
+CREATE TABLE IF NOT EXISTS HIGH_ELF_EYE_COLOR
+(
+    ID       INT AUTO_INCREMENT PRIMARY KEY,
+    COLOR_ID INT NOT NULL,
+    FOREIGN KEY (COLOR_ID) REFERENCES EYE_COLORS (ID)
+);
+
+INSERT INTO HIGH_ELF_EYE_COLOR (COLOR_ID)
+VALUES (19),
+       (20),
+       (21),
+       (22),
+       (22),
+       (22),
+       (22),
+       (25),
+       (25),
+       (25),
+       (25),
+       (23),
+       (23),
+       (23),
+       (24),
+       (24),
+       (24),
+       (18),
+       (26),
+       (16);
+
+CREATE TABLE IF NOT EXISTS WOOD_ELF_EYE_COLOR
+(
+    ID       INT AUTO_INCREMENT PRIMARY KEY,
+    COLOR_ID INT NOT NULL,
+    FOREIGN KEY (COLOR_ID) REFERENCES EYE_COLORS (ID)
+);
+
+INSERT INTO WOOD_ELF_EYE_COLOR (COLOR_ID)
+VALUES (27),
+       (28),
+       (29),
+       (30),
+       (30),
+       (30),
+       (30),
+       (31),
+       (31),
+       (31),
+       (31),
+       (31),
+       (31),
+       (31),
+       (9),
+       (9),
+       (9),
+       (32),
+       (33),
+       (34);
+
+# losowanie koloru włosów
+CREATE TABLE IF NOT EXISTS HAIR_COLORS
+(
+    ID    INT AUTO_INCREMENT PRIMARY KEY,
+    COLOR VARCHAR(25) NOT NULL UNIQUE
+);
+
+INSERT INTO HAIR_COLORS (COLOR)
 VALUES ('Biały'),
        ('Złoty blond'),
        ('Rudoblond'),
        ('Złoty'),
-       ('Złoty'),
-       ('Złoty'),
-       ('Złoty'),
-       ('Jasny brąz'),
-       ('Jasny brąz'),
-       ('Jasny brąz'),
        ('Jasny brąz'),
        ('Ciemny brąz'),
-       ('Ciemny brąz'),
-       ('Ciemny brąz'),
-       ('Czarny'),
-       ('Czarny'),
        ('Czarny'),
        ('Kasztanowy'),
        ('Rudy'),
-       ('Siwy');
-
-CREATE TABLE IF NOT EXISTS DWARF_HAIR_COLOR
-(
-    ID    INT AUTO_INCREMENT PRIMARY KEY,
-    COLOR VARCHAR(25) NOT NULL
-);
-
-INSERT INTO DWARF_HAIR_COLOR (COLOR)
-VALUES ('Blond'),
        ('Siwy'),
+       ('Blond'),
        ('Jasny blond'),
        ('Brązowy'),
-       ('Brązowy'),
-       ('Brązowy'),
-       ('Brązowy'),
-       ('Miedziany'),
-       ('Miedziany'),
-       ('Miedziany'),
        ('Miedziany'),
        ('Brąz'),
-       ('Brąz'),
-       ('Brąz'),
-       ('Brąz'),
-       ('Brąz'),
-       ('Brąz'),
-       ('Ciemny brąz'),
        ('Rudy brąz'),
-       ('Czarny');
-
-CREATE TABLE IF NOT EXISTS HALFLING_HAIR_COLOR
-(
-    ID    INT AUTO_INCREMENT PRIMARY KEY,
-    COLOR VARCHAR(25) NOT NULL
-);
-
-INSERT INTO HALFLING_HAIR_COLOR (COLOR)
-VALUES ('Biały'),
        ('Lniany'),
        ('Rudawy'),
-       ('Złoty'),
-       ('Złoty'),
-       ('Złoty'),
-       ('Złoty'),
-       ('Kasztanowy'),
-       ('Kasztanowy'),
-       ('Kasztanowy'),
-       ('Kasztanowy'),
-       ('Rudy'),
-       ('Rudy'),
-       ('Rudy'),
-       ('Musztardowy'),
-       ('Musztardowy'),
        ('Musztardowy'),
        ('Migdałowy'),
        ('Czekoladowy'),
-       ('Lukrecjowy');
-
-CREATE TABLE IF NOT EXISTS HIGH_ELF_HAIR_COLOR
-(
-    ID    INT AUTO_INCREMENT PRIMARY KEY,
-    COLOR VARCHAR(50) NOT NULL
-);
-
-INSERT INTO HIGH_ELF_HAIR_COLOR (COLOR)
-VALUES ('Srebrnosiwy'),
+       ('Lukrecjowy'),
+       ('Srebrnosiwy'),
        ('Popielaty'),
-       ('Jasny blond'),
        ('Miodowoblond'),
-       ('Miodowoblond'),
-       ('Miodowoblond'),
-       ('Miodowoblond'),
-       ('Żółty'),
-       ('Żółty'),
-       ('Żółty'),
        ('Żółty'),
        ('Miedziany blond'),
-       ('Miedziany blond'),
-       ('Miedziany blond'),
-       ('Blond'),
-       ('Blond'),
-       ('Blond'),
-       ('Migdałowy'),
        ('Czerwony'),
-       ('Czarny');
-
-CREATE TABLE IF NOT EXISTS WOOD_ELF_HAIR_COLOR
-(
-    ID    INT AUTO_INCREMENT PRIMARY KEY,
-    COLOR VARCHAR(25) NOT NULL
-);
-
-INSERT INTO WOOD_ELF_HAIR_COLOR (COLOR)
-VALUES ('Brzozowobiały'),
-       ('Blond'),
+       ('Brzozowobiały'),
        ('Różowe złoto'),
-       ('Miodowoblond'),
-       ('Miodowoblond'),
-       ('Miodowoblond'),
-       ('Miodowoblond'),
-       ('Brązowy'),
-       ('Brązowy'),
-       ('Brązowy'),
-       ('Brązowy'),
        ('Mahoniowy'),
-       ('Mahoniowy'),
-       ('Mahoniowy'),
-       ('Ciemnobrązowy'),
-       ('Ciemnobrązowy'),
-       ('Ciemnobrązowy'),
        ('Sjena'),
        ('Hebanowy'),
        ('Niebiesko-czarny');
+
+CREATE TABLE IF NOT EXISTS HUMAN_HAIR_COLOR
+(
+    ID       INT AUTO_INCREMENT PRIMARY KEY,
+    COLOR_ID INT NOT NULL,
+    FOREIGN KEY (COLOR_ID) REFERENCES HAIR_COLORS (ID)
+);
+
+INSERT INTO HUMAN_HAIR_COLOR (COLOR_ID)
+VALUES (1),
+       (2),
+       (3),
+       (4),
+       (4),
+       (4),
+       (4),
+       (5),
+       (5),
+       (5),
+       (5),
+       (6),
+       (6),
+       (6),
+       (7),
+       (7),
+       (7),
+       (8),
+       (9),
+       (10);
+
+CREATE TABLE IF NOT EXISTS DWARF_HAIR_COLOR
+(
+    ID       INT AUTO_INCREMENT PRIMARY KEY,
+    COLOR_ID INT NOT NULL,
+    FOREIGN KEY (COLOR_ID) REFERENCES HAIR_COLORS (ID)
+);
+
+INSERT INTO DWARF_HAIR_COLOR (COLOR_ID)
+VALUES (11),
+       (10),
+       (12),
+       (13),
+       (13),
+       (13),
+       (13),
+       (14),
+       (14),
+       (14),
+       (14),
+       (15),
+       (15),
+       (15),
+       (15),
+       (15),
+       (15),
+       (6),
+       (16),
+       (7);
+
+CREATE TABLE IF NOT EXISTS HALFLING_HAIR_COLOR
+(
+    ID       INT AUTO_INCREMENT PRIMARY KEY,
+    COLOR_ID INT NOT NULL,
+    FOREIGN KEY (COLOR_ID) REFERENCES HAIR_COLORS (ID)
+);
+
+INSERT INTO HALFLING_HAIR_COLOR (COLOR_ID)
+VALUES (1),
+       (17),
+       (18),
+       (4),
+       (4),
+       (4),
+       (4),
+       (8),
+       (8),
+       (8),
+       (8),
+       (9),
+       (9),
+       (9),
+       (19),
+       (19),
+       (19),
+       (20),
+       (21),
+       (22);
+
+CREATE TABLE IF NOT EXISTS HIGH_ELF_HAIR_COLOR
+(
+    ID       INT AUTO_INCREMENT PRIMARY KEY,
+    COLOR_ID INT NOT NULL,
+    FOREIGN KEY (COLOR_ID) REFERENCES HAIR_COLORS (ID)
+);
+
+INSERT INTO HIGH_ELF_HAIR_COLOR (COLOR_ID)
+VALUES (23),
+       (24),
+       (12),
+       (25),
+       (25),
+       (25),
+       (25),
+       (26),
+       (26),
+       (26),
+       (26),
+       (27),
+       (27),
+       (27),
+       (11),
+       (11),
+       (11),
+       (20),
+       (28),
+       (7);
+
+CREATE TABLE IF NOT EXISTS WOOD_ELF_HAIR_COLOR
+(
+    ID       INT AUTO_INCREMENT PRIMARY KEY,
+    COLOR_ID INT NOT NULL,
+    FOREIGN KEY (COLOR_ID) REFERENCES HAIR_COLORS (ID)
+);
+
+INSERT INTO WOOD_ELF_HAIR_COLOR (COLOR_ID)
+VALUES (29),
+       (11),
+       (30),
+       (25),
+       (25),
+       (25),
+       (25),
+       (13),
+       (13),
+       (13),
+       (13),
+       (31),
+       (31),
+       (31),
+       (6),
+       (6),
+       (6),
+       (32),
+       (33),
+       (34);
 
 # losowanie wzrostu
 

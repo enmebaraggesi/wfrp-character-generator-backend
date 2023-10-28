@@ -1,6 +1,7 @@
 package com.warhammer.wfrp.model.hair;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,14 +9,16 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "DWARF_HAIR_COLOR")
-public class DwarfHairColor implements HairColor {
+public class DwarfHairColor implements HairColorsInterface {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID", nullable = false)
     private Integer id;
     
-    @Column(name = "COLOR", nullable = false, length = 25)
-    private String color;
+    @NotNull
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "COLOR_ID", nullable = false)
+    private HairColor colorId;
     
 }
