@@ -1,8 +1,7 @@
 package com.warhammer.wfrp.model.characters;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -10,6 +9,8 @@ import java.util.Set;
 @Getter
 @Setter
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "CHARACTER_SHEETS")
 public class CharacterSheet {
     
