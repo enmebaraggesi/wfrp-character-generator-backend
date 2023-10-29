@@ -420,286 +420,380 @@ COMMIT;
 # losowanie wieku
 
 # losowanie koloru oczu
-CREATE TABLE IF NOT EXISTS HUMAN_EYE_COLOR
+CREATE TABLE IF NOT EXISTS EYE_COLORS
 (
     ID    INT AUTO_INCREMENT PRIMARY KEY,
-    COLOR VARCHAR(25) NOT NULL
+    COLOR VARCHAR(25) NOT NULL UNIQUE
 );
 
-INSERT INTO HUMAN_EYE_COLOR (COLOR)
+INSERT INTO EYE_COLORS (COLOR)
 VALUES ('Dowolny wybór'),
        ('Zielony'),
        ('Błękitny'),
        ('Niebieski'),
-       ('Niebieski'),
-       ('Niebieski'),
-       ('Niebieski'),
-       ('Blady szary'),
-       ('Blady szary'),
-       ('Blady szary'),
        ('Blady szary'),
        ('Szary'),
-       ('Szary'),
-       ('Szary'),
-       ('Brązowy'),
-       ('Brązowy'),
        ('Brązowy'),
        ('Orzechowy'),
        ('Ciemnobrązowy'),
-       ('Czarny');
-
-CREATE TABLE IF NOT EXISTS DWARF_EYE_COLOR
-(
-    ID    INT AUTO_INCREMENT PRIMARY KEY,
-    COLOR VARCHAR(25) NOT NULL
-);
-
-INSERT INTO DWARF_EYE_COLOR (COLOR)
-VALUES ('Czarny jak węgiel'),
+       ('Czarny'),
+       ('Czarny jak węgiel'),
        ('Szary jak ołów'),
        ('Stalowoszary'),
-       ('Niebieski'),
-       ('Niebieski'),
-       ('Niebieski'),
-       ('Niebieski'),
        ('Brązowy jak ziemia'),
-       ('Brązowy jak ziemia'),
-       ('Brązowy jak ziemia'),
-       ('Brązowy jak ziemia'),
-       ('Ciemnobrązowy'),
-       ('Ciemnobrązowy'),
-       ('Ciemnobrązowy'),
-       ('Orzechowy'),
-       ('Orzechowy'),
-       ('Orzechowy'),
-       ('Zielony'),
        ('Ciemny miedziany'),
-       ('Złoty');
-
-CREATE TABLE IF NOT EXISTS HALFLING_EYE_COLOR
-(
-    ID    INT AUTO_INCREMENT PRIMARY KEY,
-    COLOR VARCHAR(25) NOT NULL
-);
-
-INSERT INTO HALFLING_EYE_COLOR (COLOR)
-VALUES ('Jasnoszary'),
-       ('Szary'),
-       ('Błękitny'),
-       ('Niebieski'),
-       ('Niebieski'),
-       ('Niebieski'),
-       ('Niebieski'),
-       ('Zielony'),
-       ('Zielony'),
-       ('Zielony'),
-       ('Zielony'),
-       ('Orzechowy'),
-       ('Orzechowy'),
-       ('Orzechowy'),
-       ('Brązowy'),
-       ('Brązowy'),
-       ('Brązowy'),
+       ('Złoty'),
+       ('Jasnoszary'),
        ('Miedziany'),
-       ('Ciemnobrązowy'),
-       ('Ciemnobrązowy');
-
-CREATE TABLE IF NOT EXISTS HIGH_ELF_EYE_COLOR
-(
-    ID    INT AUTO_INCREMENT PRIMARY KEY,
-    COLOR VARCHAR(50) NOT NULL
-);
-
-INSERT INTO HIGH_ELF_EYE_COLOR (COLOR)
-VALUES ('Ciemny jak smoła'),
+       ('Ciemny jak smoła'),
        ('Ametystowy'),
        ('Akwamaryna'),
        ('Szafirowy'),
-       ('Szafirowy'),
-       ('Szafirowy'),
-       ('Szafirowy'),
-       ('Turkusowy'),
-       ('Turkusowy'),
-       ('Turkusowy'),
-       ('Turkusowy'),
-       ('Szmaragdowy'),
-       ('Szmaragdowy'),
        ('Szmaragdowy'),
        ('Bursztynowy'),
-       ('Bursztynowy'),
-       ('Bursztynowy'),
-       ('Miedziany'),
+       ('Turkusowy'),
        ('Cytrynowożółty'),
-       ('Złoty');
-
-CREATE TABLE IF NOT EXISTS WOOD_ELF_EYE_COLOR
-(
-    ID    INT AUTO_INCREMENT PRIMARY KEY,
-    COLOR VARCHAR(25) NOT NULL
-);
-
-INSERT INTO WOOD_ELF_EYE_COLOR (COLOR)
-VALUES ('Kości słoniowej'),
+       ('Kości słoniowej'),
        ('Antracyt'),
        ('Zielony jak bluszcz'),
        ('Zielony jak mech'),
-       ('Zielony jak mech'),
-       ('Zielony jak mech'),
-       ('Zielony jak mech'),
        ('Kasztanowy'),
-       ('Kasztanowy'),
-       ('Kasztanowy'),
-       ('Kasztanowy'),
-       ('Kasztanowy'),
-       ('Kasztanowy'),
-       ('Kasztanowy'),
-       ('Ciemnobrązowy'),
-       ('Ciemnobrązowy'),
-       ('Ciemnobrązowy'),
        ('Jasnobrązowy'),
        ('Złotobrązowy'),
        ('Fiołkowy');
 
-# losowanie koloru włosów
-CREATE TABLE IF NOT EXISTS HUMAN_HAIR_COLOR
+CREATE TABLE IF NOT EXISTS HUMAN_EYE_COLOR
 (
-    ID    INT AUTO_INCREMENT PRIMARY KEY,
-    COLOR VARCHAR(25) NOT NULL
+    ID       INT AUTO_INCREMENT PRIMARY KEY,
+    COLOR_ID INT NOT NULL,
+    FOREIGN KEY (COLOR_ID) REFERENCES EYE_COLORS (ID)
 );
 
-INSERT INTO HUMAN_HAIR_COLOR (COLOR)
+INSERT INTO HUMAN_EYE_COLOR (COLOR_ID)
+VALUES (1),
+       (2),
+       (3),
+       (4),
+       (4),
+       (4),
+       (4),
+       (5),
+       (5),
+       (5),
+       (5),
+       (6),
+       (6),
+       (6),
+       (7),
+       (7),
+       (7),
+       (8),
+       (9),
+       (10);
+
+CREATE TABLE IF NOT EXISTS DWARF_EYE_COLOR
+(
+    ID       INT AUTO_INCREMENT PRIMARY KEY,
+    COLOR_ID INT NOT NULL,
+    FOREIGN KEY (COLOR_ID) REFERENCES EYE_COLORS (ID)
+);
+
+INSERT INTO DWARF_EYE_COLOR (COLOR_ID)
+VALUES (11),
+       (12),
+       (13),
+       (4),
+       (4),
+       (4),
+       (4),
+       (14),
+       (14),
+       (14),
+       (14),
+       (9),
+       (9),
+       (9),
+       (8),
+       (8),
+       (8),
+       (2),
+       (15),
+       (16);
+
+CREATE TABLE IF NOT EXISTS HALFLING_EYE_COLOR
+(
+    ID       INT AUTO_INCREMENT PRIMARY KEY,
+    COLOR_ID INT NOT NULL,
+    FOREIGN KEY (COLOR_ID) REFERENCES EYE_COLORS (ID)
+);
+
+INSERT INTO HALFLING_EYE_COLOR (COLOR_ID)
+VALUES (17),
+       (6),
+       (3),
+       (4),
+       (4),
+       (4),
+       (4),
+       (2),
+       (2),
+       (2),
+       (2),
+       (8),
+       (8),
+       (8),
+       (7),
+       (7),
+       (7),
+       (18),
+       (9),
+       (9);
+
+CREATE TABLE IF NOT EXISTS HIGH_ELF_EYE_COLOR
+(
+    ID       INT AUTO_INCREMENT PRIMARY KEY,
+    COLOR_ID INT NOT NULL,
+    FOREIGN KEY (COLOR_ID) REFERENCES EYE_COLORS (ID)
+);
+
+INSERT INTO HIGH_ELF_EYE_COLOR (COLOR_ID)
+VALUES (19),
+       (20),
+       (21),
+       (22),
+       (22),
+       (22),
+       (22),
+       (25),
+       (25),
+       (25),
+       (25),
+       (23),
+       (23),
+       (23),
+       (24),
+       (24),
+       (24),
+       (18),
+       (26),
+       (16);
+
+CREATE TABLE IF NOT EXISTS WOOD_ELF_EYE_COLOR
+(
+    ID       INT AUTO_INCREMENT PRIMARY KEY,
+    COLOR_ID INT NOT NULL,
+    FOREIGN KEY (COLOR_ID) REFERENCES EYE_COLORS (ID)
+);
+
+INSERT INTO WOOD_ELF_EYE_COLOR (COLOR_ID)
+VALUES (27),
+       (28),
+       (29),
+       (30),
+       (30),
+       (30),
+       (30),
+       (31),
+       (31),
+       (31),
+       (31),
+       (31),
+       (31),
+       (31),
+       (9),
+       (9),
+       (9),
+       (32),
+       (33),
+       (34);
+
+# losowanie koloru włosów
+CREATE TABLE IF NOT EXISTS HAIR_COLORS
+(
+    ID    INT AUTO_INCREMENT PRIMARY KEY,
+    COLOR VARCHAR(25) NOT NULL UNIQUE
+);
+
+INSERT INTO HAIR_COLORS (COLOR)
 VALUES ('Biały'),
        ('Złoty blond'),
        ('Rudoblond'),
        ('Złoty'),
-       ('Złoty'),
-       ('Złoty'),
-       ('Złoty'),
-       ('Jasny brąz'),
-       ('Jasny brąz'),
-       ('Jasny brąz'),
        ('Jasny brąz'),
        ('Ciemny brąz'),
-       ('Ciemny brąz'),
-       ('Ciemny brąz'),
-       ('Czarny'),
-       ('Czarny'),
        ('Czarny'),
        ('Kasztanowy'),
        ('Rudy'),
-       ('Siwy');
-
-CREATE TABLE IF NOT EXISTS DWARF_HAIR_COLOR
-(
-    ID    INT AUTO_INCREMENT PRIMARY KEY,
-    COLOR VARCHAR(25) NOT NULL
-);
-
-INSERT INTO DWARF_HAIR_COLOR (COLOR)
-VALUES ('Blond'),
        ('Siwy'),
+       ('Blond'),
        ('Jasny blond'),
        ('Brązowy'),
-       ('Brązowy'),
-       ('Brązowy'),
-       ('Brązowy'),
-       ('Miedziany'),
-       ('Miedziany'),
-       ('Miedziany'),
        ('Miedziany'),
        ('Brąz'),
-       ('Brąz'),
-       ('Brąz'),
-       ('Brąz'),
-       ('Brąz'),
-       ('Brąz'),
-       ('Ciemny brąz'),
        ('Rudy brąz'),
-       ('Czarny');
-
-CREATE TABLE IF NOT EXISTS HALFLING_HAIR_COLOR
-(
-    ID    INT AUTO_INCREMENT PRIMARY KEY,
-    COLOR VARCHAR(25) NOT NULL
-);
-
-INSERT INTO HALFLING_HAIR_COLOR (COLOR)
-VALUES ('Biały'),
        ('Lniany'),
        ('Rudawy'),
-       ('Złoty'),
-       ('Złoty'),
-       ('Złoty'),
-       ('Złoty'),
-       ('Kasztanowy'),
-       ('Kasztanowy'),
-       ('Kasztanowy'),
-       ('Kasztanowy'),
-       ('Rudy'),
-       ('Rudy'),
-       ('Rudy'),
-       ('Musztardowy'),
-       ('Musztardowy'),
        ('Musztardowy'),
        ('Migdałowy'),
        ('Czekoladowy'),
-       ('Lukrecjowy');
-
-CREATE TABLE IF NOT EXISTS HIGH_ELF_HAIR_COLOR
-(
-    ID    INT AUTO_INCREMENT PRIMARY KEY,
-    COLOR VARCHAR(50) NOT NULL
-);
-
-INSERT INTO HIGH_ELF_HAIR_COLOR (COLOR)
-VALUES ('Srebrnosiwy'),
+       ('Lukrecjowy'),
+       ('Srebrnosiwy'),
        ('Popielaty'),
-       ('Jasny blond'),
        ('Miodowoblond'),
-       ('Miodowoblond'),
-       ('Miodowoblond'),
-       ('Miodowoblond'),
-       ('Żółty'),
-       ('Żółty'),
-       ('Żółty'),
        ('Żółty'),
        ('Miedziany blond'),
-       ('Miedziany blond'),
-       ('Miedziany blond'),
-       ('Blond'),
-       ('Blond'),
-       ('Blond'),
-       ('Migdałowy'),
        ('Czerwony'),
-       ('Czarny');
-
-CREATE TABLE IF NOT EXISTS WOOD_ELF_HAIR_COLOR
-(
-    ID    INT AUTO_INCREMENT PRIMARY KEY,
-    COLOR VARCHAR(25) NOT NULL
-);
-
-INSERT INTO WOOD_ELF_HAIR_COLOR (COLOR)
-VALUES ('Brzozowobiały'),
-       ('Blond'),
+       ('Brzozowobiały'),
        ('Różowe złoto'),
-       ('Miodowoblond'),
-       ('Miodowoblond'),
-       ('Miodowoblond'),
-       ('Miodowoblond'),
-       ('Brązowy'),
-       ('Brązowy'),
-       ('Brązowy'),
-       ('Brązowy'),
        ('Mahoniowy'),
-       ('Mahoniowy'),
-       ('Mahoniowy'),
-       ('Ciemnobrązowy'),
-       ('Ciemnobrązowy'),
-       ('Ciemnobrązowy'),
        ('Sjena'),
        ('Hebanowy'),
        ('Niebiesko-czarny');
+
+CREATE TABLE IF NOT EXISTS HUMAN_HAIR_COLOR
+(
+    ID       INT AUTO_INCREMENT PRIMARY KEY,
+    COLOR_ID INT NOT NULL,
+    FOREIGN KEY (COLOR_ID) REFERENCES HAIR_COLORS (ID)
+);
+
+INSERT INTO HUMAN_HAIR_COLOR (COLOR_ID)
+VALUES (1),
+       (2),
+       (3),
+       (4),
+       (4),
+       (4),
+       (4),
+       (5),
+       (5),
+       (5),
+       (5),
+       (6),
+       (6),
+       (6),
+       (7),
+       (7),
+       (7),
+       (8),
+       (9),
+       (10);
+
+CREATE TABLE IF NOT EXISTS DWARF_HAIR_COLOR
+(
+    ID       INT AUTO_INCREMENT PRIMARY KEY,
+    COLOR_ID INT NOT NULL,
+    FOREIGN KEY (COLOR_ID) REFERENCES HAIR_COLORS (ID)
+);
+
+INSERT INTO DWARF_HAIR_COLOR (COLOR_ID)
+VALUES (11),
+       (10),
+       (12),
+       (13),
+       (13),
+       (13),
+       (13),
+       (14),
+       (14),
+       (14),
+       (14),
+       (15),
+       (15),
+       (15),
+       (15),
+       (15),
+       (15),
+       (6),
+       (16),
+       (7);
+
+CREATE TABLE IF NOT EXISTS HALFLING_HAIR_COLOR
+(
+    ID       INT AUTO_INCREMENT PRIMARY KEY,
+    COLOR_ID INT NOT NULL,
+    FOREIGN KEY (COLOR_ID) REFERENCES HAIR_COLORS (ID)
+);
+
+INSERT INTO HALFLING_HAIR_COLOR (COLOR_ID)
+VALUES (1),
+       (17),
+       (18),
+       (4),
+       (4),
+       (4),
+       (4),
+       (8),
+       (8),
+       (8),
+       (8),
+       (9),
+       (9),
+       (9),
+       (19),
+       (19),
+       (19),
+       (20),
+       (21),
+       (22);
+
+CREATE TABLE IF NOT EXISTS HIGH_ELF_HAIR_COLOR
+(
+    ID       INT AUTO_INCREMENT PRIMARY KEY,
+    COLOR_ID INT NOT NULL,
+    FOREIGN KEY (COLOR_ID) REFERENCES HAIR_COLORS (ID)
+);
+
+INSERT INTO HIGH_ELF_HAIR_COLOR (COLOR_ID)
+VALUES (23),
+       (24),
+       (12),
+       (25),
+       (25),
+       (25),
+       (25),
+       (26),
+       (26),
+       (26),
+       (26),
+       (27),
+       (27),
+       (27),
+       (11),
+       (11),
+       (11),
+       (20),
+       (28),
+       (7);
+
+CREATE TABLE IF NOT EXISTS WOOD_ELF_HAIR_COLOR
+(
+    ID       INT AUTO_INCREMENT PRIMARY KEY,
+    COLOR_ID INT NOT NULL,
+    FOREIGN KEY (COLOR_ID) REFERENCES HAIR_COLORS (ID)
+);
+
+INSERT INTO WOOD_ELF_HAIR_COLOR (COLOR_ID)
+VALUES (29),
+       (11),
+       (30),
+       (25),
+       (25),
+       (25),
+       (25),
+       (13),
+       (13),
+       (13),
+       (13),
+       (31),
+       (31),
+       (31),
+       (6),
+       (6),
+       (6),
+       (32),
+       (33),
+       (34);
 
 # losowanie wzrostu
 
@@ -841,312 +935,193 @@ VALUES ('Miękka skóra', 'Skórzana kurta', '12 s', '1', 'Powszechna', NULL, 'r
        ('Płytowe', 'Hełm', '3 ZK', '2', 'Rzadka', '-20 do Percepcji', 'głowa', 2, 'Nieprzebijalny, Wrażliwe punkty');
 COMMIT;
 
-CREATE TABLE IF NOT EXISTS INVENTORY_CONTAINERS
+CREATE TABLE IF NOT EXISTS INVENTORY_OTHER
 (
     ID           INT AUTO_INCREMENT PRIMARY KEY,
-    NAME         VARCHAR(50) NOT NULL,
-    COST         VARCHAR(20) NOT NULL,
-    WEIGHT       VARCHAR(10),
-    CONTAINS     INT         NOT NULL,
-    AVAILABILITY VARCHAR(25) NOT NULL
-);
-
-INSERT INTO INVENTORY_CONTAINERS (NAME, COST, WEIGHT, CONTAINS, AVAILABILITY)
-VALUES ('Beczka', '8 s', '6', 12, 'Powszechna'),
-       ('Beczułka', '3 s', '2', 4, 'Powszechna'),
-       ('Bukłak', '1 s 8 p', '1', 1, 'Powszechna'),
-       ('Butelka', '5 s', '0', 0, 'Powszechna'),
-       ('Duży worek', '1 s 6 p', '3', 6, 'Powszechna'),
-       ('Dzban', '3 s 2 p', '1', 1, 'Powszechna'),
-       ('Kufel cynowy', '4 s', '0', 0, 'Powszechna'),
-       ('Plecak', '4 s 10 p', '2', 4, 'Powszechna'),
-       ('Sakiewka', '4 p', '0', 1, 'Powszechna'),
-       ('Juki', '18 s', '4', 8, 'Powszechna'),
-       ('Torba na ramię', '1 s', '1', 2, 'Powszechna'),
-       ('Tuba na zwoje', '16 s', '0', 0, 'Ograniczona'),
-       ('Worek', '1 s', '2', 4, 'Powszechna');
-COMMIT;
-
-CREATE TABLE IF NOT EXISTS INVENTORY_CLOTHING
-(
-    ID           INT AUTO_INCREMENT PRIMARY KEY,
-    NAME         VARCHAR(50) NOT NULL,
-    COST         VARCHAR(20) NOT NULL,
-    WEIGHT       VARCHAR(10),
-    AVAILABILITY VARCHAR(25) NOT NULL
-);
-
-INSERT INTO INVENTORY_CLOTHING (NAME, COST, WEIGHT, AVAILABILITY)
-VALUES ('Amulet', '2 p', '0', 'Powszechna'),
-       ('Berło', '8 ZK', '1', 'Rzadka'),
-       ('Biżuteria', 'Różna', '0', 'Powszechna'),
-       ('Buty', '5 s', '0', 'Powszechna'),
-       ('Kapelusz', '4 s', '0', 'Powszechna'),
-       ('Kaptur lub maska', '5 s', '0', 'Powszechna'),
-       ('Kostium', '1 ZK', '1', 'Ograniczona'),
-       ('Laska', '3 ZK', '1', 'Powszechna'),
-       ('Mundur', '1 ZK 2 s', '1', 'Ograniczona'),
-       ('Opończa', '18 s', '1', 'Powszechna'),
-       ('Perfumy', '10 s', '0', 'Powszechna'),
-       ('Płaszcz', '10 s', '1', 'Powszechna'),
-       ('Puder do twarzy', '10 s', '0', 'Powszechna'),
-       ('Rękawiczki', '4 s', '0', 'Powszechna'),
-       ('Strój dworski', '12 ZK', '1', 'Ograniczona'),
-       ('Sygnet', '5 ZK', '0', 'Rzadka'),
-       ('Symbol religijny', '6 s 8 p', '0', 'Powszechna'),
-       ('Szata', '2 ZK', '1', 'Powszechna'),
-       ('Tatuaż', '4+ s', '0', 'Ograniczona'),
-       ('Ubranie', '6 s', '1', 'Powszechna'),
-       ('Wysokie buty', '5 s', '1', 'Powszechna'),
-       ('Zapinki (6)', '10 s', '0', 'Ograniczona');
-COMMIT;
-
-CREATE TABLE IF NOT EXISTS INVENTORY_DINING
-(
-    ID           INT AUTO_INCREMENT PRIMARY KEY,
-    NAME         VARCHAR(50) NOT NULL,
-    COST         VARCHAR(20) NOT NULL,
-    WEIGHT       VARCHAR(10),
-    AVAILABILITY VARCHAR(25) NOT NULL
-);
-
-INSERT INTO INVENTORY_DINING (NAME, COST, WEIGHT, AVAILABILITY)
-VALUES ('Beczułka piwa', '3 s', '2', 'Powszechna'),
-       ('Butelka wina', '10 p', '0', 'Powszechna'),
-       ('Ciepły posiłek w gospodzie', '1 s', '0', 'Powszechna'),
-       ('Jedzenie na zimno na 1 dzień', '10 p', '1', 'Powszechna'),
-       ('Kielich wina lub mocnego trunku', '1 p', '0', 'Powszechna'),
-       ('Pół litra piwa', '3 p', '0', 'Powszechna'),
-       ('Pół litra przesławnego Piwa Bugmana', '9 p', '0', 'Egzotyczna'),
-       ('Pół litra mocnego trunku', '2 s', '0', 'Powszechna'),
-       ('Prowiant na 1 dzień', '2 s', '0', 'Powszechna'),
-       ('Prywatny pokój na 1 noc', '10 s', NULL, 'Powszechna'),
-       ('Stajnia na 1 noc', '10 p', NULL, 'Powszechna'),
-       ('Wspólna izba na 1 noc', '10 p', NULL, 'Powszechna');
-
-CREATE TABLE IF NOT EXISTS INVENTORY_TOOLS
-(
-    ID           INT AUTO_INCREMENT PRIMARY KEY,
-    NAME         VARCHAR(50) NOT NULL,
-    COST         VARCHAR(20) NOT NULL,
-    WEIGHT       VARCHAR(10),
-    AVAILABILITY VARCHAR(25) NOT NULL
-);
-
-INSERT INTO INVENTORY_TOOLS (NAME, COST, WEIGHT, AVAILABILITY)
-VALUES ('Bosak', '5 s', '1', 'Powszechna'),
-       ('Dłuto', '4 s 2 p', '0', 'Powszechna'),
-       ('Drąg (3 metry)', '8 s', '3', 'Powszechna'),
-       ('Grabie', '4 s 6 p', '2', 'Powszechna'),
-       ('Grawerowana pieczęć', '5 ZK', '0', 'Ograniczona'),
-       ('Grzebień', '10 p', '0', 'Powszechna'),
-       ('Gwoździe (12)', '2 p', '0', 'Powszechna'),
-       ('Haczyki na ryby (12)', '1 s', '0', 'Powszechna'),
-       ('Kajdany', '18 s', '0', 'Ograniczona'),
-       ('Kilof', '18 s', '1', 'Ograniczona'),
-       ('Klucz', '1 s', '0', 'Powszechna'),
-       ('Kołek', '1 s', '0', 'Powszechna'),
-       ('Kule', '3 s', '2', 'Powszechna'),
-       ('Liczydło', '3 s 4 p', '0', 'Ograniczona'),
-       ('Lusterko ręczne', '1 ZK 1 s 6 p', '0', 'Egzotyczna'),
-       ('Łom', '2 s 6 p', '1', 'Powszechna'),
-       ('Miotła', '10 p', '2', 'Powszechna'),
-       ('Młotek', '3 s', '0', 'Powszechna'),
-       ('Młotek sędziego', '1 ZK', '0', 'Ograniczona'),
-       ('Mop', '1 s', '2', 'Powszechna'),
-       ('Motyka', '4 s', '2', 'Powszechna'),
-       ('Moździerz z tłuczkiem', '14 s', '0', 'Powszechna'),
-       ('Narzędzie do czyszczenia uszu', '2 s', '0', 'Ograniczona'),
-       ('Nóż', '8 s', '0', 'Powszechna'),
-       ('Pędzel do malowania', '4 s', '0', 'Powszechna'),
-       ('Piła', '6 s', '1', 'Powszechna'),
-       ('Pinceta', '1 s', '0', 'Ograniczona'),
-       ('Pióro do pisania', '3 s', '0', 'Powszechna'),
-       ('Sidła na zwierzęta', '2 s 6 p', '1', 'Powszechna'),
-       ('Sierp', '1 ZK', '1', 'Powszechna'),
-       ('Soczewki DO czytania', '3 ZK', '0', 'Rzadka'),
-       ('Stalowe szczypce', '16 s', '0', 'Powszechna'),
-       ('Szczotka do podłogi', '1 s 6 p', '0', 'Powszechna'),
-       ('Szpadel', '8 s', '2', 'Powszechna'),
-       ('Teleskop', '5 ZK', '0', 'Rzadka'),
-       ('Wiadro', '2 s 6 p', '1', 'Powszechna'),
-       ('Wytrychy', '15 s', '0', 'Ograniczona'),
-       ('Zestaw na zatrucia', '3 ZK', '0', 'Ograniczona'),
-       ('Zestaw do charakteryzacji', '6 s 6 p', '0', 'Ograniczona'),
-       ('Zestaw do pisania', '2 ZK', '0', 'Ograniczona');
-COMMIT;
-
-CREATE TABLE IF NOT EXISTS INVENTORY_BOOKS
-(
-    ID           INT AUTO_INCREMENT PRIMARY KEY,
-    NAME         VARCHAR(50) NOT NULL,
-    COST         VARCHAR(20) NOT NULL,
-    WEIGHT       VARCHAR(10),
-    AVAILABILITY VARCHAR(25) NOT NULL
-);
-
-INSERT INTO INVENTORY_BOOKS (NAME, COST, WEIGHT, AVAILABILITY)
-VALUES ('Arkusz pergaminu', '1 s', '0', 'Powszechna'),
-       ('Broszura', '1 s', '0', 'Powszechna'),
-       ('Dokument prawny', '3 s', '0', 'Powszechna'),
-       ('Księga, aptekarstwo', '8 ZK', '1', 'Ograniczona'),
-       ('Księga, inżynieria', '3 ZK', '1', 'Ograniczona'),
-       ('Księga, magia', '20 ZK', '1', 'Egzotyczna'),
-       ('Księga, medycyna', '15 ZK', '1', 'Rzadka'),
-       ('Księga, kryptografia', '8 ZK', '1', 'Egzotyczna'),
-       ('Księga, prawo', '15 ZK', '1', 'Rzadka'),
-       ('Księga, religia', '1 ZK', '1', 'Powszechna'),
-       ('Księga, sztuka', '5 ZK', '1', 'Ograniczona'),
-       ('Licencja cechu/gildii', 'nie na sprzedaż', '0', 'niedostępna'),
-       ('Mapa', '3 ZK', '0', 'Ograniczona');
-COMMIT;
-
-CREATE TABLE IF NOT EXISTS INVENTORY_WORK
-(
-    ID           INT AUTO_INCREMENT PRIMARY KEY,
+    TYPE VARCHAR(25) NOT NULL,
     NAME         VARCHAR(50) NOT NULL,
     COST         VARCHAR(20) NOT NULL,
     WEIGHT       VARCHAR(20),
-    AVAILABILITY VARCHAR(25) NOT NULL
-);
-
-INSERT INTO INVENTORY_WORK (NAME, COST, WEIGHT, AVAILABILITY)
-VALUES ('Narzędzia Pracy', '3 ZK', '1', 'Rzadka'),
-       ('Warsztat', '80 ZK', 'nie da się nosić', 'Egzotyczna');
-COMMIT;
-
-CREATE TABLE IF NOT EXISTS INVENTORY_ANIMALS_CARTS
-(
-    ID           INT AUTO_INCREMENT PRIMARY KEY,
-    NAME         VARCHAR(50) NOT NULL,
-    COST         VARCHAR(20) NOT NULL,
-    WEIGHT       VARCHAR(10),
     CONTAINS     INT,
     AVAILABILITY VARCHAR(25) NOT NULL
 );
 
-INSERT INTO INVENTORY_ANIMALS_CARTS (NAME, COST, WEIGHT, CONTAINS, AVAILABILITY)
-VALUES ('Barka rzeczna', '225 ZK', NULL, 300, 'Rzadka'),
-       ('Furmanka', '20 ZK', NULL, 25, 'Powszechna'),
-       ('Gołąb pocztowy', '3 s', '1', 0, 'Ograniczona'),
-       ('Koń pociągowy', '4 ZK', NULL, 20, 'Powszechna'),
-       ('Koń wierzchowy', '15 ZK', NULL, 16, 'Powszechna'),
-       ('Łódka dłubanka', '2 ZK', '6', 10, 'Ograniczona'),
-       ('Kucyk', '10 ZK', NULL, 14, 'Powszechna'),
-       ('Kurczak', '5 p', '1', 0, 'Powszechna'),
-       ('Lekki koń bojowy', '70 ZK', NULL, 18, 'Powszechna'),
-       ('Łódź wiosłowa', '6 ZK', NULL, 60, 'Ograniczona'),
-       ('Małpa', '10 ZK', '2', 1, 'Rzadka'),
-       ('Muł', '5 ZK', NULL, 14, 'Powszechna'),
-       ('Obroża i smycz dla psa', '1 s 7 p', '0', NULL, 'Powszechna'),
-       ('Pies myśliwski', '2 ZK', NULL, 0, 'Rzadka'),
-       ('Powóz', '150 ZK', NULL, 80, 'Rzadka'),
-       ('Robaki (6)', '1 p', '0', NULL, 'Powszechna'),
-       ('Rumak', '230 ZK', NULL, 20, 'Ograniczona'),
-       ('Uprząż z siodłem', '6 ZK', '4', NULL, 'Powszechna'),
-       ('Wóz', '75 ZK', NULL, 30, 'Powszechna');
-COMMIT;
-
-CREATE TABLE IF NOT EXISTS INVENTORY_POISONS
-(
-    ID           INT AUTO_INCREMENT PRIMARY KEY,
-    NAME         VARCHAR(50) NOT NULL,
-    COST         VARCHAR(20) NOT NULL,
-    WEIGHT       VARCHAR(10),
-    AVAILABILITY VARCHAR(25) NOT NULL
-);
-
-INSERT INTO INVENTORY_POISONS (NAME, COST, WEIGHT, AVAILABILITY)
-VALUES ('Czarny lotos', '20 ZK', '0', 'Egzotyczna'),
-       ('Dziwnokorzeń', '4 s', '0', 'Rzadka'),
-       ('Grzybki Szalonego Kapelusznika', '5 ZK', '0', 'Egzotyczna'),
-       ('Korzeń mandragory', '1 ZK', '0', 'Rzadka'),
-       ('Księżycowy kwiat', '5 ZK', '0', 'Ograniczona'),
-       ('Pluja', '1 ZK 5 s', '0', 'Rzadka'),
-       ('Rozkosz Ranalda', '18 s', '0', 'Ograniczona'),
-       ('Sercobój', '40 ZK', '0', 'Egzotyczna');
-COMMIT;
-
-CREATE TABLE IF NOT EXISTS INVENTORY_POTIONS
-(
-    ID           INT AUTO_INCREMENT PRIMARY KEY,
-    NAME         VARCHAR(50) NOT NULL,
-    COST         VARCHAR(20) NOT NULL,
-    WEIGHT       VARCHAR(10),
-    AVAILABILITY VARCHAR(25) NOT NULL
-);
-
-INSERT INTO INVENTORY_POTIONS (NAME, COST, WEIGHT, AVAILABILITY)
-VALUES ('Eliksir żywotności', '18 s', '0', 'Ograniczona'),
-       ('Fakstoryl', '15 s', '0', 'Egzotyczna'),
-       ('Kataplazm leczniczy', '12 s', '0', 'Powszechna'),
-       ('Mikstura lecznicza', '10 s', '0', 'Ograniczona'),
-       ('Nocny cień', '3 ZK', '0', 'Rzadka'),
-       ('Salwort', '12 s', '0', 'Powszechna'),
-       ('Tonik na trawienie', '3 s', '0', 'Powszechna'),
-       ('Ziemny korzeń', '5 ZK', '0', 'Ograniczona');
-COMMIT;
-
-CREATE TABLE IF NOT EXISTS INVENTORY_PROSTHETSES
-(
-    ID           INT AUTO_INCREMENT PRIMARY KEY,
-    NAME         VARCHAR(50) NOT NULL,
-    COST         VARCHAR(20) NOT NULL,
-    WEIGHT       VARCHAR(10),
-    AVAILABILITY VARCHAR(25) NOT NULL
-);
-
-INSERT INTO INVENTORY_PROSTHETSES (NAME, COST, WEIGHT, AVAILABILITY)
-VALUES ('Cud inżynierii', '20 ZK', '1', 'Egzotyczna'),
-       ('Drewniane zęby', '10 s', '0', 'Rzadka'),
-       ('Hak', '3 s 4 p', '1', 'Powszechna'),
-       ('Opaska na oko', '6 p', '0', 'Powszechna'),
-       ('Sztuczna noga', '16 s', '2', 'Ograniczona'),
-       ('Sztuczne oko', '1 ZK', '0', 'Rzadka'),
-       ('Złoty nos', '18 s', '0', 'Ograniczona');
-COMMIT;
-
-CREATE TABLE IF NOT EXISTS INVENTORY_MISC
-(
-    ID           INT AUTO_INCREMENT PRIMARY KEY,
-    NAME         VARCHAR(50) NOT NULL,
-    COST         VARCHAR(20) NOT NULL,
-    WEIGHT       VARCHAR(10),
-    AVAILABILITY VARCHAR(25) NOT NULL
-);
-
-INSERT INTO INVENTORY_MISC (NAME, COST, WEIGHT, AVAILABILITY)
-VALUES ('Afisz', '1 s', '2', 'Powszechna'),
-       ('Bandaż', '4 p', '0', 'Powszechna'),
-       ('Fajka i tytoń', '3 s 4 p', '0', 'Ograniczona'),
-       ('Instrument', '2 ZK', '1', 'Rzadka'),
-       ('Koc', '8 p', '0', 'Powszechna'),
-       ('Kociołek do gotowania', '8 s', '1', 'Powszechna'),
-       ('Kości do gry', '10 p', '0', 'Powszechna'),
-       ('Kotwiczka', '1 ZK 10 s', '1', 'Ograniczona'),
-       ('Kreda', '10 p', '0', 'Powszechna'),
-       ('Kubek', '8 p', '0', 'Powszechna'),
-       ('Lampa oliwna', '2 s', '0', 'Powszechna'),
-       ('Lampa sztormowa', '1 ZK', '1', 'Ograniczona'),
-       ('Latarnia', '12 s', '1', 'Powszechna'),
-       ('Lalka', '2 s', '0', 'Powszechna'),
-       ('Lampa Davricha', '2 ZK', '1', 'Rzadka'),
-       ('Lina, 10 metrów', '8 s 4 p', '1', 'Powszechna'),
-       ('Miska', '1 s', '0', 'Powszechna'),
-       ('Namiot', '12 s', '2', 'Ograniczona'),
-       ('Pałka', '1 s', '0', 'Powszechna'),
-       ('Patelnia', '7 s 6 s', '1', 'Powszechna'),
-       ('Piłka', '5 p', '0', 'Powszechna'),
-       ('Płócienna plandeka', '8 s', '1', 'Powszechna'),
-       ('Pudełko na hubkę i krzesiwo', '4 s 2 p', '0', 'Powszechna'),
-       ('Szmaty', '1 p', '0', 'Powszechna'),
-       ('Sztućce', '3 s 6 p', '0', 'Powszechna'),
-       ('Świece (tuzin)', '1 s', '0', 'Powszechna'),
-       ('Talerz', '1 s', '0', 'Powszechna'),
-       ('Talia kart', '1 s', '0', 'Powszechna'),
-       ('Węgiel do rysowania', '10 p', '0', 'Powszechna'),
-       ('Zapałka', '1 p', '0', 'Powszechna'),
-       ('Zwijane posłanie', '6 s', '1', 'Powszechna');
+INSERT INTO INVENTORY_OTHER (TYPE, NAME, COST, WEIGHT, CONTAINS, AVAILABILITY)
+VALUES ('POJEMNIKI', 'Beczka', '8 s', '6', 12, 'Powszechna'),
+       ('POJEMNIKI', 'Beczułka', '3 s', '2', 4, 'Powszechna'),
+       ('POJEMNIKI', 'Bukłak', '1 s 8 p', '1', 1, 'Powszechna'),
+       ('POJEMNIKI', 'Butelka', '5 s', '0', 0, 'Powszechna'),
+       ('POJEMNIKI', 'Duży worek', '1 s 6 p', '3', 6, 'Powszechna'),
+       ('POJEMNIKI', 'Dzban', '3 s 2 p', '1', 1, 'Powszechna'),
+       ('POJEMNIKI', 'Kufel cynowy', '4 s', '0', 0, 'Powszechna'),
+       ('POJEMNIKI', 'Plecak', '4 s 10 p', '2', 4, 'Powszechna'),
+       ('POJEMNIKI', 'Sakiewka', '4 p', '0', 1, 'Powszechna'),
+       ('POJEMNIKI', 'Juki', '18 s', '4', 8, 'Powszechna'),
+       ('POJEMNIKI', 'Torba na ramię', '1 s', '1', 2, 'Powszechna'),
+       ('POJEMNIKI', 'Tuba na zwoje', '16 s', '0', 0, 'Ograniczona'),
+       ('POJEMNIKI', 'Worek', '1 s', '2', 4, 'Powszechna'),
+       ('ODZIEŻ', 'Amulet', '2 p', '0', NULL, 'Powszechna'),
+       ('ODZIEŻ', 'Berło', '8 ZK', '1', NULL, 'Rzadka'),
+       ('ODZIEŻ', 'Biżuteria', 'Różna', '0', NULL, 'Powszechna'),
+       ('ODZIEŻ', 'Buty', '5 s', '0', NULL, 'Powszechna'),
+       ('ODZIEŻ', 'Kapelusz', '4 s', '0', NULL, 'Powszechna'),
+       ('ODZIEŻ', 'Kaptur lub maska', '5 s', '0', NULL, 'Powszechna'),
+       ('ODZIEŻ', 'Kostium', '1 ZK', '1', NULL, 'Ograniczona'),
+       ('ODZIEŻ', 'Laska', '3 ZK', '1', NULL, 'Powszechna'),
+       ('ODZIEŻ', 'Mundur', '1 ZK 2 s', '1', NULL, 'Ograniczona'),
+       ('ODZIEŻ', 'Opończa', '18 s', '1', NULL, 'Powszechna'),
+       ('ODZIEŻ', 'Perfumy', '10 s', '0', NULL, 'Powszechna'),
+       ('ODZIEŻ', 'Płaszcz', '10 s', '1', NULL, 'Powszechna'),
+       ('ODZIEŻ', 'Puder do twarzy', '10 s', '0', NULL, 'Powszechna'),
+       ('ODZIEŻ', 'Rękawiczki', '4 s', '0', NULL, 'Powszechna'),
+       ('ODZIEŻ', 'Strój dworski', '12 ZK', '1', NULL, 'Ograniczona'),
+       ('ODZIEŻ', 'Sygnet', '5 ZK', '0', NULL, 'Rzadka'),
+       ('ODZIEŻ', 'Symbol religijny', '6 s 8 p', '0', NULL, 'Powszechna'),
+       ('ODZIEŻ', 'Szata', '2 ZK', '1', NULL, 'Powszechna'),
+       ('ODZIEŻ', 'Tatuaż', '4+ s', '0', NULL, 'Ograniczona'),
+       ('ODZIEŻ', 'Ubranie', '6 s', '1', NULL, 'Powszechna'),
+       ('ODZIEŻ', 'Wysokie buty', '5 s', '1', NULL, 'Powszechna'),
+       ('ODZIEŻ', 'Zapinki (6)', '10 s', '0', NULL, 'Ograniczona'),
+       ('ŻYWNOŚĆ', 'Beczułka piwa', '3 s', '2', NULL, 'Powszechna'),
+       ('ŻYWNOŚĆ', 'Butelka wina', '10 p', '0', NULL, 'Powszechna'),
+       ('ŻYWNOŚĆ', 'Ciepły posiłek w gospodzie', '1 s', '0', NULL, 'Powszechna'),
+       ('ŻYWNOŚĆ', 'Jedzenie na zimno na 1 dzień', '10 p', '1', NULL, 'Powszechna'),
+       ('ŻYWNOŚĆ', 'Kielich wina lub mocnego trunku', '1 p', '0', NULL, 'Powszechna'),
+       ('ŻYWNOŚĆ', 'Pół litra piwa', '3 p', '0', NULL, 'Powszechna'),
+       ('ŻYWNOŚĆ', 'Pół litra przesławnego Piwa Bugmana', '9 p', '0', NULL, 'Egzotyczna'),
+       ('ŻYWNOŚĆ', 'Pół litra mocnego trunku', '2 s', '0', NULL, 'Powszechna'),
+       ('ŻYWNOŚĆ', 'Prowiant na 1 dzień', '2 s', '0', NULL, 'Powszechna'),
+       ('ŻYWNOŚĆ', 'Prywatny pokój na 1 noc', '10 s', NULL, NULL, 'Powszechna'),
+       ('ŻYWNOŚĆ', 'Stajnia na 1 noc', '10 p', NULL, NULL, 'Powszechna'),
+       ('ŻYWNOŚĆ', 'Wspólna izba na 1 noc', '10 p', NULL, NULL, 'Powszechna'),
+       ('NARZĘDZIA', 'Bosak', '5 s', '1', NULL, 'Powszechna'),
+       ('NARZĘDZIA', 'Dłuto', '4 s 2 p', '0', NULL, 'Powszechna'),
+       ('NARZĘDZIA', 'Drąg (3 metry)', '8 s', '3', NULL, 'Powszechna'),
+       ('NARZĘDZIA', 'Grabie', '4 s 6 p', '2', NULL, 'Powszechna'),
+       ('NARZĘDZIA', 'Grawerowana pieczęć', '5 ZK', '0', NULL, 'Ograniczona'),
+       ('NARZĘDZIA', 'Grzebień', '10 p', '0', NULL, 'Powszechna'),
+       ('NARZĘDZIA', 'Gwoździe (12)', '2 p', '0', NULL, 'Powszechna'),
+       ('NARZĘDZIA', 'Haczyki na ryby (12)', '1 s', '0', NULL, 'Powszechna'),
+       ('NARZĘDZIA', 'Kajdany', '18 s', '0', NULL, 'Ograniczona'),
+       ('NARZĘDZIA', 'Kilof', '18 s', '1', NULL, 'Ograniczona'),
+       ('NARZĘDZIA', 'Klucz', '1 s', '0', NULL, 'Powszechna'),
+       ('NARZĘDZIA', 'Kołek', '1 s', '0', NULL, 'Powszechna'),
+       ('NARZĘDZIA', 'Kule', '3 s', '2', NULL, 'Powszechna'),
+       ('NARZĘDZIA', 'Liczydło', '3 s 4 p', '0', NULL, 'Ograniczona'),
+       ('NARZĘDZIA', 'Lusterko ręczne', '1 ZK 1 s 6 p', '0', NULL, 'Egzotyczna'),
+       ('NARZĘDZIA', 'Łom', '2 s 6 p', '1', NULL, 'Powszechna'),
+       ('NARZĘDZIA', 'Miotła', '10 p', '2', NULL, 'Powszechna'),
+       ('NARZĘDZIA', 'Młotek', '3 s', '0', NULL, 'Powszechna'),
+       ('NARZĘDZIA', 'Młotek sędziego', '1 ZK', '0', NULL, 'Ograniczona'),
+       ('NARZĘDZIA', 'Mop', '1 s', '2', NULL, 'Powszechna'),
+       ('NARZĘDZIA', 'Motyka', '4 s', '2', NULL, 'Powszechna'),
+       ('NARZĘDZIA', 'Moździerz z tłuczkiem', '14 s', '0', NULL, 'Powszechna'),
+       ('NARZĘDZIA', 'Narzędzie do czyszczenia uszu', '2 s', '0', NULL, 'Ograniczona'),
+       ('NARZĘDZIA', 'Nóż', '8 s', '0', NULL, 'Powszechna'),
+       ('NARZĘDZIA', 'Pędzel do malowania', '4 s', '0', NULL, 'Powszechna'),
+       ('NARZĘDZIA', 'Piła', '6 s', '1', NULL, 'Powszechna'),
+       ('NARZĘDZIA', 'Pinceta', '1 s', '0', NULL, 'Ograniczona'),
+       ('NARZĘDZIA', 'Pióro do pisania', '3 s', '0', NULL, 'Powszechna'),
+       ('NARZĘDZIA', 'Sidła na zwierzęta', '2 s 6 p', '1', NULL, 'Powszechna'),
+       ('NARZĘDZIA', 'Sierp', '1 ZK', '1', NULL, 'Powszechna'),
+       ('NARZĘDZIA', 'Soczewki DO czytania', '3 ZK', '0', NULL, 'Rzadka'),
+       ('NARZĘDZIA', 'Stalowe szczypce', '16 s', '0', NULL, 'Powszechna'),
+       ('NARZĘDZIA', 'Szczotka do podłogi', '1 s 6 p', '0', NULL, 'Powszechna'),
+       ('NARZĘDZIA', 'Szpadel', '8 s', '2', NULL, 'Powszechna'),
+       ('NARZĘDZIA', 'Teleskop', '5 ZK', '0', NULL, 'Rzadka'),
+       ('NARZĘDZIA', 'Wiadro', '2 s 6 p', '1', NULL, 'Powszechna'),
+       ('NARZĘDZIA', 'Wytrychy', '15 s', '0', NULL, 'Ograniczona'),
+       ('NARZĘDZIA', 'Zestaw na zatrucia', '3 ZK', '0', NULL, 'Ograniczona'),
+       ('NARZĘDZIA', 'Zestaw do charakteryzacji', '6 s 6 p', '0', NULL, 'Ograniczona'),
+       ('NARZĘDZIA', 'Zestaw do pisania', '2 ZK', '0', NULL, 'Ograniczona'),
+       ('PISMA', 'Arkusz pergaminu', '1 s', '0', NULL, 'Powszechna'),
+       ('PISMA', 'Broszura', '1 s', '0', NULL, 'Powszechna'),
+       ('PISMA', 'Dokument prawny', '3 s', '0', NULL, 'Powszechna'),
+       ('PISMA', 'Księga, aptekarstwo', '8 ZK', '1', NULL, 'Ograniczona'),
+       ('PISMA', 'Księga, inżynieria', '3 ZK', '1', NULL, 'Ograniczona'),
+       ('PISMA', 'Księga, magia', '20 ZK', '1', NULL, 'Egzotyczna'),
+       ('PISMA', 'Księga, medycyna', '15 ZK', '1', NULL, 'Rzadka'),
+       ('PISMA', 'Księga, kryptografia', '8 ZK', '1', NULL, 'Egzotyczna'),
+       ('PISMA', 'Księga, prawo', '15 ZK', '1', NULL, 'Rzadka'),
+       ('PISMA', 'Księga, religia', '1 ZK', '1', NULL, 'Powszechna'),
+       ('PISMA', 'Księga, sztuka', '5 ZK', '1', NULL, 'Ograniczona'),
+       ('PISMA', 'Licencja cechu/gildii', 'nie na sprzedaż', '0', NULL, 'niedostępna'),
+       ('PISMA', 'Mapa', '3 ZK', '0', NULL, 'Ograniczona'),
+       ('PRACA', 'Narzędzia Pracy', '3 ZK', '1', NULL, 'Rzadka'),
+       ('PRACA', 'Warsztat', '80 ZK', 'nie da się nosić', NULL, 'Egzotyczna'),
+       ('ZWIERZĘTA I POJAZDY', 'Barka rzeczna', '225 ZK', NULL, 300, 'Rzadka'),
+       ('ZWIERZĘTA I POJAZDY', 'Furmanka', '20 ZK', NULL, 25, 'Powszechna'),
+       ('ZWIERZĘTA I POJAZDY', 'Gołąb pocztowy', '3 s', '1', 0, 'Ograniczona'),
+       ('ZWIERZĘTA I POJAZDY', 'Koń pociągowy', '4 ZK', NULL, 20, 'Powszechna'),
+       ('ZWIERZĘTA I POJAZDY', 'Koń wierzchowy', '15 ZK', NULL, 16, 'Powszechna'),
+       ('ZWIERZĘTA I POJAZDY', 'Łódka dłubanka', '2 ZK', '6', 10, 'Ograniczona'),
+       ('ZWIERZĘTA I POJAZDY', 'Kucyk', '10 ZK', NULL, 14, 'Powszechna'),
+       ('ZWIERZĘTA I POJAZDY', 'Kurczak', '5 p', '1', 0, 'Powszechna'),
+       ('ZWIERZĘTA I POJAZDY', 'Lekki koń bojowy', '70 ZK', NULL, 18, 'Powszechna'),
+       ('ZWIERZĘTA I POJAZDY', 'Łódź wiosłowa', '6 ZK', NULL, 60, 'Ograniczona'),
+       ('ZWIERZĘTA I POJAZDY', 'Małpa', '10 ZK', '2', 1, 'Rzadka'),
+       ('ZWIERZĘTA I POJAZDY', 'Muł', '5 ZK', NULL, 14, 'Powszechna'),
+       ('ZWIERZĘTA I POJAZDY', 'Obroża i smycz dla psa', '1 s 7 p', '0', NULL, 'Powszechna'),
+       ('ZWIERZĘTA I POJAZDY', 'Pies myśliwski', '2 ZK', NULL, 0, 'Rzadka'),
+       ('ZWIERZĘTA I POJAZDY', 'Powóz', '150 ZK', NULL, 80, 'Rzadka'),
+       ('ZWIERZĘTA I POJAZDY', 'Robaki (6)', '1 p', '0', NULL, 'Powszechna'),
+       ('ZWIERZĘTA I POJAZDY', 'Rumak', '230 ZK', NULL, 20, 'Ograniczona'),
+       ('ZWIERZĘTA I POJAZDY', 'Uprząż z siodłem', '6 ZK', '4', NULL, 'Powszechna'),
+       ('ZWIERZĘTA I POJAZDY', 'Wóz', '75 ZK', NULL, 30, 'Powszechna'),
+       ('TRUCIZNY', 'Czarny lotos', '20 ZK', 0, NULL, 'Egzotyczna'),
+       ('TRUCIZNY', 'Dziwnokorzeń', '4 s', 0, NULL, 'Rzadka'),
+       ('TRUCIZNY', 'Grzybki Szalonego Kapelusznika', '5 ZK', 0, NULL, 'Egzotyczna'),
+       ('TRUCIZNY', 'Korzeń mandragory', '1 ZK', 0, NULL, 'Rzadka'),
+       ('TRUCIZNY', 'Księżycowy kwiat', '5 ZK', 0, NULL, 'Ograniczona'),
+       ('TRUCIZNY', 'Pluja', '1 ZK 5 s', 0, NULL, 'Rzadka'),
+       ('TRUCIZNY', 'Rozkosz Ranalda', '18 s', 0, NULL, 'Ograniczona'),
+       ('TRUCIZNY', 'Sercobój', '40 ZK', 0, NULL, 'Egzotyczna'),
+       ('ELIKSIRY', 'Eliksir żywotności', '18 s', '0', NULL, 'Ograniczona'),
+       ('ELIKSIRY', 'Fakstoryl', '15 s', '0', NULL, 'Egzotyczna'),
+       ('ELIKSIRY', 'Kataplazm leczniczy', '12 s', '0', NULL, 'Powszechna'),
+       ('ELIKSIRY', 'Mikstura lecznicza', '10 s', '0', NULL, 'Ograniczona'),
+       ('ELIKSIRY', 'Nocny cień', '3 ZK', '0', NULL, 'Rzadka'),
+       ('ELIKSIRY', 'Salwort', '12 s', '0', NULL, 'Powszechna'),
+       ('ELIKSIRY', 'Tonik na trawienie', '3 s', '0', NULL, 'Powszechna'),
+       ('ELIKSIRY', 'Ziemny korzeń', '5 ZK', '0', NULL, 'Ograniczona'),
+       ('PROTEZY', 'Cud inżynierii', '20 ZK', '1', NULL, 'Egzotyczna'),
+       ('PROTEZY', 'Drewniane zęby', '10 s', '0', NULL, 'Rzadka'),
+       ('PROTEZY', 'Hak', '3 s 4 p', '1', NULL, 'Powszechna'),
+       ('PROTEZY', 'Opaska na oko', '6 p', '0', NULL, 'Powszechna'),
+       ('PROTEZY', 'Sztuczna noga', '16 s', '2', NULL, 'Ograniczona'),
+       ('PROTEZY', 'Sztuczne oko', '1 ZK', '0', NULL, 'Rzadka'),
+       ('PROTEZY', 'Złoty nos', '18 s', '0', NULL, 'Ograniczona'),
+       ('RÓŻNE', 'Afisz', '1 s', '2', NULL, 'Powszechna'),
+       ('RÓŻNE', 'Bandaż', '4 p', '0', NULL, 'Powszechna'),
+       ('RÓŻNE', 'Fajka i tytoń', '3 s 4 p', '0', NULL, 'Ograniczona'),
+       ('RÓŻNE', 'Instrument', '2 ZK', '1', NULL, 'Rzadka'),
+       ('RÓŻNE', 'Koc', '8 p', '0', NULL, 'Powszechna'),
+       ('RÓŻNE', 'Kociołek do gotowania', '8 s', '1', NULL, 'Powszechna'),
+       ('RÓŻNE', 'Kości do gry', '10 p', '0', NULL, 'Powszechna'),
+       ('RÓŻNE', 'Kotwiczka', '1 ZK 10 s', '1', NULL, 'Ograniczona'),
+       ('RÓŻNE', 'Kreda', '10 p', '0', NULL, 'Powszechna'),
+       ('RÓŻNE', 'Kubek', '8 p', '0', NULL, 'Powszechna'),
+       ('RÓŻNE', 'Lampa oliwna', '2 s', '0', NULL, 'Powszechna'),
+       ('RÓŻNE', 'Lampa sztormowa', '1 ZK', '1', NULL, 'Ograniczona'),
+       ('RÓŻNE', 'Latarnia', '12 s', '1', NULL, 'Powszechna'),
+       ('RÓŻNE', 'Lalka', '2 s', '0', NULL, 'Powszechna'),
+       ('RÓŻNE', 'Lampa Davricha', '2 ZK', '1', NULL, 'Rzadka'),
+       ('RÓŻNE', 'Lina, 10 metrów', '8 s 4 p', '1', NULL, 'Powszechna'),
+       ('RÓŻNE', 'Miska', '1 s', '0', NULL, 'Powszechna'),
+       ('RÓŻNE', 'Namiot', '12 s', '2', NULL, 'Ograniczona'),
+       ('RÓŻNE', 'Pałka', '1 s', '0', NULL, 'Powszechna'),
+       ('RÓŻNE', 'Patelnia', '7 s 6 s', '1', NULL, 'Powszechna'),
+       ('RÓŻNE', 'Piłka', '5 p', '0', NULL, 'Powszechna'),
+       ('RÓŻNE', 'Płócienna plandeka', '8 s', '1', NULL, 'Powszechna'),
+       ('RÓŻNE', 'Pudełko na hubkę i krzesiwo', '4 s 2 p', '0', NULL, 'Powszechna'),
+       ('RÓŻNE', 'Szmaty', '1 p', '0', NULL, 'Powszechna'),
+       ('RÓŻNE', 'Sztućce', '3 s 6 p', '0', NULL, 'Powszechna'),
+       ('RÓŻNE', 'Świece (tuzin)', '1 s', '0', NULL, 'Powszechna'),
+       ('RÓŻNE', 'Talerz', '1 s', '0', NULL, 'Powszechna'),
+       ('RÓŻNE', 'Talia kart', '1 s', '0', NULL, 'Powszechna'),
+       ('RÓŻNE', 'Węgiel do rysowania', '10 p', '0', NULL, 'Powszechna'),
+       ('RÓŻNE', 'Zapałka', '1 p', '0', NULL, 'Powszechna'),
+       ('RÓŻNE', 'Zwijane posłanie', '6 s', '1', NULL, 'Powszechna');
 COMMIT;
 
 CREATE TABLE IF NOT EXISTS INVENTORY_HIRELINGS
