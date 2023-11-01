@@ -24,7 +24,7 @@ public class EyeColorsController {
     @GetMapping("/eyes/dwarfs")
     public Set<EyeColorDto> getAllDwarfEyeColors() {
         List<DwarfEyeColor> dwarfEyeColors = dwarfEyeColorRepository.findAll();
-        return eyeColorMapper.mapEyeColorListToEyeColorDtoList(List.copyOf(dwarfEyeColors));
+        return eyeColorMapper.mapEyeColorListToEyeColorDtoSet(List.copyOf(dwarfEyeColors));
     }
     
     @GetMapping("/eyes/dwarfs/random")
@@ -37,7 +37,7 @@ public class EyeColorsController {
     @GetMapping("/eyes/halflings")
     public Set<EyeColorDto> getAllHalflingEyeColors() {
         List<HalflingEyeColor> halflingEyeColors = halflingEyeColorRepository.findAll();
-        return eyeColorMapper.mapEyeColorListToEyeColorDtoList(List.copyOf(halflingEyeColors));
+        return eyeColorMapper.mapEyeColorListToEyeColorDtoSet(List.copyOf(halflingEyeColors));
     }
     
     @GetMapping("/eyes/halflings/random")
@@ -50,7 +50,7 @@ public class EyeColorsController {
     @GetMapping("/eyes/helves")
     public Set<EyeColorDto> getAllHighElfEyeColors() {
         List<HighElfEyeColor> highElfEyeColors = highElfEyeColorRepository.findAll();
-        return eyeColorMapper.mapEyeColorListToEyeColorDtoList(List.copyOf(highElfEyeColors));
+        return eyeColorMapper.mapEyeColorListToEyeColorDtoSet(List.copyOf(highElfEyeColors));
     }
     
     @GetMapping("/eyes/helves/random")
@@ -63,7 +63,7 @@ public class EyeColorsController {
     @GetMapping("/eyes/humans")
     public Set<EyeColorDto> getAllHumanEyeColors() {
         List<HumanEyeColor> humanEyeColors = humanEyeColorRepository.findAll();
-        return eyeColorMapper.mapEyeColorListToEyeColorDtoList(List.copyOf(humanEyeColors));
+        return eyeColorMapper.mapEyeColorListToEyeColorDtoSet(List.copyOf(humanEyeColors));
     }
     
     @GetMapping("/eyes/humans/random")
@@ -76,7 +76,7 @@ public class EyeColorsController {
     @GetMapping("/eyes/welves")
     public Set<EyeColorDto> getAllWoodElfEyeColors() {
         List<WoodElfEyeColor> woodElfEyeColors = woodElfEyeColorRepository.findAll();
-        return eyeColorMapper.mapEyeColorListToEyeColorDtoList(List.copyOf(woodElfEyeColors));
+        return eyeColorMapper.mapEyeColorListToEyeColorDtoSet(List.copyOf(woodElfEyeColors));
     }
     
     @GetMapping("/eyes/welves/random")
