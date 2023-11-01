@@ -13,12 +13,12 @@ public class DiceRoller {
         return roller.nextInt(2);
     }
     
-    public int rollK10() {
-        return roller.nextInt(1, 11);
-    }
-    
-    public int roll2K10() {
-        return rollK10() + rollK10();
+    public int rollK10(int times) {
+        int sum = 0;
+        for (int i = 0; i < times; i++) {
+            sum += roller.nextInt(1, 11);
+        }
+        return sum;
     }
     
     public int rollK100() {

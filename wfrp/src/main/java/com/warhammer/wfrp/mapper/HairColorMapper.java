@@ -5,6 +5,8 @@ import com.warhammer.wfrp.model.hair.HairColorsInterface;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class HairColorMapper {
@@ -13,9 +15,9 @@ public class HairColorMapper {
         return new HairColorDto(color.getColorId().getColor());
     }
     
-    public List<HairColorDto> mapHairColorListToHairColorListDto(List<HairColorsInterface> list) {
+    public Set<HairColorDto> mapHairColorListToHairColorDtoSet(List<HairColorsInterface> list) {
         return list.stream()
                    .map(this::mapHairColorToHairColorDto)
-                   .toList();
+                   .collect(Collectors.toSet());
     }
 }

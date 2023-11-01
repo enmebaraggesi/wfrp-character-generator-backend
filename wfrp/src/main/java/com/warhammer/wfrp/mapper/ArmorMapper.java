@@ -12,9 +12,7 @@ public class ArmorMapper {
     public ArmorDto mapInventoryArmorToArmorDto(InventoryArmor inventoryArmor) {
         return new ArmorDto(inventoryArmor.getType(),
                             inventoryArmor.getName(),
-                            inventoryArmor.getCost(),
                             inventoryArmor.getWeight(),
-                            inventoryArmor.getAvailability(),
                             inventoryArmor.getPenalty(),
                             inventoryArmor.getLocalization(),
                             inventoryArmor.getDamage(),

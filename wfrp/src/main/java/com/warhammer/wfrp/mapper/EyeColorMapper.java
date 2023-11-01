@@ -15,7 +15,7 @@ public class EyeColorMapper {
         return new EyeColorDto(color.getColorId().getColor());
     }
     
-    public Set<EyeColorDto> mapEyeColorListToEyeColorDtoList(List<EyeColorInterface> list) {
+    public Set<EyeColorDto> mapEyeColorListToEyeColorDtoSet(List<EyeColorInterface> list) {
         return list.stream()
                    .map(this::mapEyeColorToEyeColorDto)
                    .collect(Collectors.toSet());

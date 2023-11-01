@@ -22,9 +22,9 @@ public class HairColorsController {
     private final HairColorMapper hairColorMapper;
     
     @GetMapping("/hair/dwarfs")
-    public List<HairColorDto> getAllDwarfHairColors() {
+    public Set<HairColorDto> getAllDwarfHairColors() {
         List<DwarfHairColor> dwarfHairColors = dwarfHairColorRepository.findAll();
-        return hairColorMapper.mapHairColorListToHairColorListDto(List.copyOf(dwarfHairColors));
+        return hairColorMapper.mapHairColorListToHairColorDtoSet(List.copyOf(dwarfHairColors));
     }
     
     @GetMapping("/hair/dwarfs/random")
@@ -35,9 +35,9 @@ public class HairColorsController {
     }
     
     @GetMapping("/hair/halflings")
-    public List<HairColorDto> getAllHalflingHairColors() {
+    public Set<HairColorDto> getAllHalflingHairColors() {
         List<HalflingHairColor> halflingHairColors = halflingHairColorRepository.findAll();
-        return hairColorMapper.mapHairColorListToHairColorListDto(List.copyOf(halflingHairColors));
+        return hairColorMapper.mapHairColorListToHairColorDtoSet(List.copyOf(halflingHairColors));
     }
     
     @GetMapping("/hair/halflings/random")
@@ -48,9 +48,9 @@ public class HairColorsController {
     }
     
     @GetMapping("/hair/helves")
-    public List<HairColorDto> getAllHighElfHairColors() {
+    public Set<HairColorDto> getAllHighElfHairColors() {
         List<HighElfHairColor> highElfHairColors = highElfHairColorRepository.findAll();
-        return hairColorMapper.mapHairColorListToHairColorListDto(List.copyOf(highElfHairColors));
+        return hairColorMapper.mapHairColorListToHairColorDtoSet(List.copyOf(highElfHairColors));
     }
     
     @GetMapping("/hair/helves/random")
@@ -61,9 +61,9 @@ public class HairColorsController {
     }
     
     @GetMapping("/hair/humans")
-    public List<HairColorDto> getAllHumanHairColors() {
+    public Set<HairColorDto> getAllHumanHairColors() {
         List<HumanHairColor> humanHairColors = humanHairColorRepository.findAll();
-        return hairColorMapper.mapHairColorListToHairColorListDto(List.copyOf(humanHairColors));
+        return hairColorMapper.mapHairColorListToHairColorDtoSet(List.copyOf(humanHairColors));
     }
     
     @GetMapping("/hair/humans/random")
@@ -74,9 +74,9 @@ public class HairColorsController {
     }
     
     @GetMapping("/hair/welves")
-    public List<HairColorDto> getAllWoodElfHairColors() {
+    public Set<HairColorDto> getAllWoodElfHairColors() {
         List<WoodElfHairColor> woodElfHairColors = woodElfHairColorRepository.findAll();
-        return hairColorMapper.mapHairColorListToHairColorListDto(List.copyOf(woodElfHairColors));
+        return hairColorMapper.mapHairColorListToHairColorDtoSet(List.copyOf(woodElfHairColors));
     }
     
     @GetMapping("/hair/welves/random")

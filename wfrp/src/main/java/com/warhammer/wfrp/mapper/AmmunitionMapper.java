@@ -12,8 +12,6 @@ public class AmmunitionMapper {
     public AmmoDto mapInventoryAmmoToAmmoDto(InventoryAmmo inventoryAmmo) {
         return new AmmoDto(inventoryAmmo.getType(),
                            inventoryAmmo.getName(),
-                           inventoryAmmo.getCost(),
-                           inventoryAmmo.getAvailability(),
                            inventoryAmmo.getLength(),
                            inventoryAmmo.getDamage(),
                            inventoryAmmo.getTraits());

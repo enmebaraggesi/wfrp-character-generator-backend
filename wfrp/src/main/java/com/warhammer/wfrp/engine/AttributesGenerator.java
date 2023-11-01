@@ -12,13 +12,13 @@ public class AttributesGenerator {
     public int melee(String race) {
         switch (race) {
             case "Człowiek" -> {
-                return diceRoller.roll2K10() + 20;
+                return diceRoller.rollK10(2) + 20;
             }
             case "Krasnolud", "Wysoki elf", "Leśny elf" -> {
-                return diceRoller.roll2K10() + 30;
+                return diceRoller.rollK10(2) + 30;
             }
             case "Niziołek" -> {
-                return diceRoller.roll2K10() + 10;
+                return diceRoller.rollK10(2) + 10;
             }
             default -> {
                 return 0;
@@ -29,10 +29,10 @@ public class AttributesGenerator {
     public int distance(String race) {
         switch (race) {
             case "Człowiek", "Krasnolud" -> {
-                return diceRoller.roll2K10() + 20;
+                return diceRoller.rollK10(2) + 20;
             }
             case "Wysoki elf", "Leśny elf", "Niziołek" -> {
-                return diceRoller.roll2K10() + 30;
+                return diceRoller.rollK10(2) + 30;
             }
             default -> {
                 return 0;
@@ -43,10 +43,10 @@ public class AttributesGenerator {
     public int strength(String race) {
         switch (race) {
             case "Człowiek", "Krasnolud", "Wysoki elf", "Leśny elf" -> {
-                return diceRoller.roll2K10() + 20;
+                return diceRoller.rollK10(2) + 20;
             }
             case "Niziołek" -> {
-                return diceRoller.roll2K10() + 10;
+                return diceRoller.rollK10(2) + 10;
             }
             default -> {
                 return 0;
@@ -57,10 +57,10 @@ public class AttributesGenerator {
     public int endurance(String race) {
         switch (race) {
             case "Człowiek", "Wysoki elf", "Leśny elf", "Niziołek" -> {
-                return diceRoller.roll2K10() + 20;
+                return diceRoller.rollK10(2) + 20;
             }
             case "Krasnolud" -> {
-                return diceRoller.roll2K10() + 30;
+                return diceRoller.rollK10(2) + 30;
             }
             default -> {
                 return 0;
@@ -71,10 +71,10 @@ public class AttributesGenerator {
     public int initiative(String race) {
         switch (race) {
             case "Człowiek", "Krasnolud", "Niziołek" -> {
-                return diceRoller.roll2K10() + 20;
+                return diceRoller.rollK10(2) + 20;
             }
             case "Wysoki elf", "Leśny elf" -> {
-                return diceRoller.roll2K10() + 40;
+                return diceRoller.rollK10(2) + 40;
             }
             default -> {
                 return 0;
@@ -85,13 +85,13 @@ public class AttributesGenerator {
     public int agility(String race) {
         switch (race) {
             case "Człowiek", "Niziołek" -> {
-                return diceRoller.roll2K10() + 20;
+                return diceRoller.rollK10(2) + 20;
             }
             case "Wysoki elf", "Leśny elf" -> {
-                return diceRoller.roll2K10() + 30;
+                return diceRoller.rollK10(2) + 30;
             }
             case "Krasnolud" -> {
-                return diceRoller.roll2K10() + 10;
+                return diceRoller.rollK10(2) + 10;
             }
             default -> {
                 return 0;
@@ -102,10 +102,10 @@ public class AttributesGenerator {
     public int dexterity(String race) {
         switch (race) {
             case "Człowiek" -> {
-                return diceRoller.roll2K10() + 20;
+                return diceRoller.rollK10(2) + 20;
             }
             case "Niziołek", "Krasnolud", "Wysoki elf", "Leśny elf" -> {
-                return diceRoller.roll2K10() + 30;
+                return diceRoller.rollK10(2) + 30;
             }
             default -> {
                 return 0;
@@ -116,10 +116,10 @@ public class AttributesGenerator {
     public int intelligence(String race) {
         switch (race) {
             case "Człowiek", "Niziołek", "Krasnolud" -> {
-                return diceRoller.roll2K10() + 20;
+                return diceRoller.rollK10(2) + 20;
             }
             case "Wysoki elf", "Leśny elf" -> {
-                return diceRoller.roll2K10() + 30;
+                return diceRoller.rollK10(2) + 30;
             }
             default -> {
                 return 0;
@@ -130,13 +130,13 @@ public class AttributesGenerator {
     public int willpower(String race) {
         switch (race) {
             case "Człowiek" -> {
-                return diceRoller.roll2K10() + 20;
+                return diceRoller.rollK10(2) + 20;
             }
             case "Wysoki elf", "Leśny elf", "Niziołek" -> {
-                return diceRoller.roll2K10() + 30;
+                return diceRoller.rollK10(2) + 30;
             }
             case "Krasnolud" -> {
-                return diceRoller.roll2K10() + 40;
+                return diceRoller.rollK10(2) + 40;
             }
             default -> {
                 return 0;
@@ -147,13 +147,13 @@ public class AttributesGenerator {
     public int charisma(String race) {
         switch (race) {
             case "Człowiek", "Wysoki elf", "Leśny elf" -> {
-                return diceRoller.roll2K10() + 20;
+                return diceRoller.rollK10(2) + 20;
             }
             case "Niziołek" -> {
-                return diceRoller.roll2K10() + 30;
+                return diceRoller.rollK10(2) + 30;
             }
             case "Krasnolud" -> {
-                return diceRoller.roll2K10() + 10;
+                return diceRoller.rollK10(2) + 10;
             }
             default -> {
                 return 0;
