@@ -23,6 +23,12 @@ public class SkillsController {
         return mapper.mapSkillListToSkillDtoList(basicSkills);
     }
     
+    @GetMapping("/skills/advanced")
+    public List<SkillDto> getAllAdvancedSkills() {
+        List<Skill> advancedSkills = repository.findAllByIsAdvanced(true);
+        return mapper.mapSkillListToSkillDtoList(advancedSkills);
+    }
+    
     @GetMapping("/skills")
     public List<SkillDto> getAllSkills() {
         List<Skill> skills = repository.findAll();

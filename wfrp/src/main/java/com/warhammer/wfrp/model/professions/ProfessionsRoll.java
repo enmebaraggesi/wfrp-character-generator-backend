@@ -1,6 +1,8 @@
 package com.warhammer.wfrp.model.professions;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -24,6 +26,11 @@ public class ProfessionsRoll {
     @Lob
     @Column(name = "DESCRIPTION")
     private String description;
+    
+    @Size(max = 10)
+    @NotNull
+    @Column(name = "STATUS", nullable = false, length = 10)
+    private String status;
     
     @Column(name = "HU_MIN")
     private Integer huMin;
