@@ -1,4 +1,4 @@
-package com.warhammer.wfrp.controller;
+package com.warhammer.wfrp.controllers;
 
 import com.warhammer.wfrp.dto.*;
 import com.warhammer.wfrp.mapper.CharacterSheetMapper;

@@ -5,7 +5,7 @@ public record ArmorDto(String type,
                        String weight,
                        String penalty,
                        String localization,
-                       Integer damage,
+                       Integer points,
                        String traits) {
     
 }

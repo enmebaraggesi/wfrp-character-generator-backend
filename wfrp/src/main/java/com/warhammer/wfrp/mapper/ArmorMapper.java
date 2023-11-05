@@ -15,7 +15,7 @@ public class ArmorMapper {
                             inventoryArmor.getWeight(),
                             inventoryArmor.getPenalty(),
                             inventoryArmor.getLocalization(),
-                            inventoryArmor.getDamage(),
+                            inventoryArmor.getPoints(),
                             inventoryArmor.getTraits());
     }
     

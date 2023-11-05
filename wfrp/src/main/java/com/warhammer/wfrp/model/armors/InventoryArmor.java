@@ -36,8 +36,8 @@ public class InventoryArmor {
     @Column(name = "LOCALIZATION", nullable = false, length = 25)
     private String localization;
     
-    @Column(name = "DAMAGE")
-    private Integer damage;
+    @Column(name = "POINTS")
+    private Integer points;
     
     @Column(name = "TRAITS", length = 50)
     private String traits;

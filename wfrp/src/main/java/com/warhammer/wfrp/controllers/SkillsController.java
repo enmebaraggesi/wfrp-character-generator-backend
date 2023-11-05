@@ -1,4 +1,4 @@
-package com.warhammer.wfrp.controller;
+package com.warhammer.wfrp.controllers;
 
 import com.warhammer.wfrp.dto.SkillDto;
 import com.warhammer.wfrp.mapper.SkillMapper;

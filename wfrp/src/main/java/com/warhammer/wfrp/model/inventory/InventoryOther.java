@@ -33,10 +33,12 @@ public class InventoryOther {
     private String cost;
     
     @Size(max = 20)
+    @NotNull
     @Column(name = "WEIGHT", length = 20)
     private String weight;
     
     @Column(name = "CONTAINS")
+    @NotNull
     private Integer contains;
     
     @Size(max = 25)
