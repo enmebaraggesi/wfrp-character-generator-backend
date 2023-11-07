@@ -1,5 +1,39 @@
 # Generator postaci dla Warhammer Fantasy Roleplay 4E
 
+### PROJEKT W TRAKCIE BUDOWY
+Następujące aspekty działania aplikacji wciąż czekają na poprawki/implementacje:
+- [ ] Przeniesienie bazy danych do pliku, celem ułatwienia aplikacji bycia portable
+- [ ] Rozbudowa widoków aplikacji o przynajmniej jeden główny widok, dając dostęp do obecnego z menu
+- [ ] Integracja obu warstw aplikacji pod jednym "instalatorem"
+- [ ] Dalsza praca nad usprawnianiem działania aplikacji i inne...
+
+
+Następujące funkcjonalności generatora wciąż czekają na implementację:
+- [ ] Poprawne wczytywanie listy zapisanych kart postaci
+- [ ] Poprawnie działający zapis kart postaci
+- [ ] Poprawnie działające wczytywanie kart postaci
+- [ ] Generowanie imion w zależności od rasy
+- [ ] Poprawne losowanie cech, punktów bohatera, przeznaczenia i szybkości w zależności od rasy
+- [ ] Ograniczenie dostępności profesji w zależności od rasy
+- [ ] Uzupełnienie umiejętności i talentów w zależności od rasy
+- [ ] Możliwość wyświetlania tooltipa z opisem po najechaniu na nazwę profesji
+- [ ] Darmowy rozwój postaci po wyborze profesji
+- [ ] Uzupełnienie wyposażenia po wyborze profesji
+- [ ] Podświetlenie istotnych cech i umiejętności po wyborze profesji
+- [ ] Obliczanie zarobków i informacja przy Ogładzie zależnie od statusu
+- [ ] Otwarcie pól wieku i wzrostu dla użytkownika
+- [ ] Udostępnienie możliwości dopisywania informacji do umiejętności grupowych
+- [ ] Kalkulator obciążenia wyposażenia z informacją o karach
+- [ ] Kalkulator obrażeń w zależności od wybranych broni
+- [ ] Możliwość wyświetlania tooltipa z opisem po najechaniu na cechę broni i pancerza
+- [ ] Adnotacja przy odpowiednich umiejętnościach o obowiązujących karach z pancerza
+- [ ] Podgląd lokalizacji pancerza wraz z sumami punktów pancerza
+- [ ] Ograniczenie dostępności poziomu talentów dla talentów bezpoziomowych
+- [ ] Możliwość wyświetlania tooltipa z opisem po najechaniu na nazwę talentu
+- [ ] Możliwość wyświetlania tooltipa z opisem po najechaniu na nazwę wyposażenia
+- [ ] Dodanie pola pojemności dla ekwipunku do przechowywania
+- [ ] Możliwość wyświetlania tooltipa z opisem po najechaniu na nazwę wyposażenia
+
 ### O projekcie
 Zapraszam do zapoznania się z moim finalnym projektem bootcampu Java Plus w Kodilli.
 Dalej będę posługiwał się określeniem ***generator*** zamiennie z ***projekt***.
@@ -56,6 +90,14 @@ http://localhost:8081
 ```
 
 Oprowadzę cię po poszczególnych elementach generatora.
+
+![Obraz przedstawiający część opisującą postać](https://snipboard.io/hvS0pD.jpg)
+
+***TA SEKCJA JEST W TRAKCIE PROJEKTOWANIA***
+- **Karty postaci** - pole powinno zawierać dostępne nazwy zapisanych kart postaci i dawać możliwość nazwania obecnie kreowanej.
+- **ZAPISZ** - przycisk powinien dawać możliwość zapisywania karty postaci. _Może zawierać błędy_
+- **WCZYTAJ** - przycisk powinien dawać możliwość wczytania karty postaci po jej wybraniu z listy kart. ***FUNKCJONALNOŚĆ NIE JEST ZAIMPLEMENTOWANA***
+
 ![Obraz przedstawiający część opisującą postać](https://snipboard.io/Z47QvW.jpg)
 
 - **IMIĘ** - pole uzupełnia się samodzielnie dzięki generatorowi po wybraniu rasy, aczkolwiek możesz wpisać dowolną nazwę swojej postaci. Póki co generuje wyłącznie ludzkie imiona. Docelowo chciałbym, żeby generator tworzył imiona odmienne dla każdej z ras.
@@ -110,3 +152,16 @@ Oprowadzę cię po poszczególnych elementach generatora.
   - **Kary** - pole kar ponoszonych przez postać z powodu pancerza. Uzupełnia się po wyborze pancerza.
   - **P.panc.** - pole uzupełnia się samodzielnie po wyborze pancerza. Chciałbym, aby docelowo istniał szkic postaci, na którym będą wyświetlane sumy punktów pancerza w danej części ciała.
   - **Cechy** - pole cech pancerza, uzupełnia się samodzielnie po wyborze pancerza. Docelowo chciałbym, aby każda cecha miała możliwość podświetlenia i wyświetlenia opisu.
+
+![Obraz przedstawiający część talentów, wyposażenia i najemników postaci](https://snipboard.io/3rzthD.jpg)
+
+- **TALENTY**
+  - **Talent** - pole zawierające nazwy wszystkich talentów. Docelowo chciałbym aby ich wybór powodował "wygaszenie" pola poziomów, jeśli zostanie wybrany talent bezpoziomowy, a oprócz tego wybór niektórych talentów powinien mieć wpływ na inne cechy postaci.
+  - **Poziom** - pole pozwalające na wpisanie poziomu talentu. Docelowo chciałbym aby talenty pozwalające na usprawnienie innych elementów postaci oznajmiały to.
+- **WYPOSAŻENIE**
+  - **Nazwa** - pole zawierające nazwy wszystkich rodzajów wyposażenia. Ich wybór powoduje uzupełnienie odpowiednią wartością pola wagi.
+  - **Waga** - pole uzupełnia się samodzielnie po wyborze pancerza. Docelowo chciałbym zamieścić licznik obciążenia postaci sugerujący kary ponoszone za przeciążenie.
+- **NAJEMNICY**
+  - **Typ** - pole zawierające nazwy wszystkich typów najemników. Ich wybór powoduje uzupełnienie odpowiednią wartością pozostałych pól.
+  - **Imię** - pole generuje imię najemnika po jego wyborze.
+  - **Koszt** - pole uzupełnia się po wyborze najemnika.
