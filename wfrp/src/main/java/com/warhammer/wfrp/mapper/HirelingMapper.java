@@ -1,7 +1,7 @@
 package com.warhammer.wfrp.mapper;
 
-import com.warhammer.wfrp.dto.HirelingDto;
-import com.warhammer.wfrp.model.inventory.InventoryHireling;
+import com.warhammer.wfrp.dto.inventory.HirelingDto;
+import com.warhammer.wfrp.model.inventory.Hireling;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,17 +9,17 @@ import java.util.List;
 @Service
 public class HirelingMapper {
     
-    private HirelingDto mapInventoryHirelingToHirelingDto(InventoryHireling inventoryHireling) {
-        return new HirelingDto(inventoryHireling.getName(),
-                               inventoryHireling.getQuickJob(),
-                               inventoryHireling.getDayJob(),
-                               inventoryHireling.getWeekJob(),
-                               inventoryHireling.getAbout());
+    private HirelingDto mapHirelingToHirelingDto(Hireling hireling) {
+        return new HirelingDto(hireling.getName(),
+                               hireling.getQuickJob(),
+                               hireling.getDayJob(),
+                               hireling.getWeekJob(),
+                               hireling.getAbout());
     }
     
-    public List<HirelingDto> mapInventoryHirelingListToHirelingDtoList(List<InventoryHireling> list) {
+    public List<HirelingDto> mapHirelingListToHirelingDtoList(List<Hireling> list) {
         return list.stream()
-                   .map(this::mapInventoryHirelingToHirelingDto)
+                   .map(this::mapHirelingToHirelingDto)
                    .toList();
     }
 }

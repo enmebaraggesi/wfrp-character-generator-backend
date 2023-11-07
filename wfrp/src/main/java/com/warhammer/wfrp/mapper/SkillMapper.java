@@ -1,7 +1,7 @@
 package com.warhammer.wfrp.mapper;
 
-import com.warhammer.wfrp.dto.SkillDto;
-import com.warhammer.wfrp.model.skills.Skill;
+import com.warhammer.wfrp.dto.skill.SkillDto;
+import com.warhammer.wfrp.model.skill.Skill;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,7 +12,6 @@ public class SkillMapper {
     private SkillDto mapSkillToSkillDto(Skill skill) {
         return new SkillDto(skill.getName(),
                             skill.getAttribute(),
-                            skill.getIsAdvanced(),
                             skill.getIsGroup(),
                             skill.getDescription());
     }

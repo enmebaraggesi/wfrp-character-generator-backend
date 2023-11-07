@@ -1,6 +1,6 @@
 package com.warhammer.wfrp.mapper;
 
-import com.warhammer.wfrp.dto.AgeDto;
+import com.warhammer.wfrp.dto.appearance.AgeDto;
 import org.springframework.stereotype.Service;
 
 @Service

@@ -1,6 +1,6 @@
 package com.warhammer.wfrp.mapper;
 
-import com.warhammer.wfrp.dto.EyeColorDto;
+import com.warhammer.wfrp.dto.appearance.EyeColorDto;
 import com.warhammer.wfrp.model.eyes.EyeColorInterface;
 import org.springframework.stereotype.Service;
 

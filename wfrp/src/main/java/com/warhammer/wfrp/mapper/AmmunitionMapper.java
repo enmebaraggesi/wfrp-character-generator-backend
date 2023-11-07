@@ -1,7 +1,7 @@
 package com.warhammer.wfrp.mapper;
 
-import com.warhammer.wfrp.dto.AmmoDto;
-import com.warhammer.wfrp.model.weapons.InventoryAmmo;
+import com.warhammer.wfrp.dto.weapon.AmmoDto;
+import com.warhammer.wfrp.model.weapon.Ammo;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,17 +9,17 @@ import java.util.List;
 @Service
 public class AmmunitionMapper {
     
-    public AmmoDto mapInventoryAmmoToAmmoDto(InventoryAmmo inventoryAmmo) {
-        return new AmmoDto(inventoryAmmo.getType(),
-                           inventoryAmmo.getName(),
-                           inventoryAmmo.getLength(),
-                           inventoryAmmo.getDamage(),
-                           inventoryAmmo.getTraits());
+    public AmmoDto mapAmmoToAmmoDto(Ammo ammo) {
+        return new AmmoDto(ammo.getType(),
+                           ammo.getName(),
+                           ammo.getLength(),
+                           ammo.getDamage(),
+                           ammo.getTraits());
     }
     
-    public List<AmmoDto> mapInventoryAmmoListToAmmoDtoList(List<InventoryAmmo> list) {
+    public List<AmmoDto> mapAmmoListToAmmoDtoList(List<Ammo> list) {
         return list.stream()
-                   .map(this::mapInventoryAmmoToAmmoDto)
+                   .map(this::mapAmmoToAmmoDto)
                    .toList();
     }
 }

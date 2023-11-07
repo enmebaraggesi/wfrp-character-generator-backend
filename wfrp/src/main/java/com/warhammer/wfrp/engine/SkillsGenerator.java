@@ -7,6 +7,7 @@ import java.util.Set;
 @Service
 public class SkillsGenerator {
     
+    //TODO generator, obsługa błędów
     public Set<String> generateSkillsBasedOnRace(String race) {
         switch (race) {
             case "Człowiek" -> {

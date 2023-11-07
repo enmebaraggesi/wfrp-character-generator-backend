@@ -9,6 +9,7 @@ public class AttributesGenerator {
     
     private final DiceRoller diceRoller;
     
+    //TODO generator
     public int melee(String race) {
         switch (race) {
             case "Człowiek" -> {

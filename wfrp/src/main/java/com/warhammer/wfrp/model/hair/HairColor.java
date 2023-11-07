@@ -1,8 +1,6 @@
 package com.warhammer.wfrp.model.hair;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -20,8 +18,6 @@ public class HairColor {
     @Column(name = "ID", nullable = false)
     private Integer id;
     
-    @Size(max = 25)
-    @NotNull
     @Column(name = "COLOR", nullable = false, length = 25)
     private String color;
     

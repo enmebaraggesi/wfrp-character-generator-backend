@@ -21,6 +21,10 @@ public class DiceRoller {
         return sum;
     }
     
+    public int rollK20() {
+        return roller.nextInt(1, 21);
+    }
+    
     public int rollK100() {
         return roller.nextInt(1, 101);
     }

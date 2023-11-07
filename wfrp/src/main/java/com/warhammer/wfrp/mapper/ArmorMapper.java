@@ -1,7 +1,7 @@
 package com.warhammer.wfrp.mapper;
 
-import com.warhammer.wfrp.dto.ArmorDto;
-import com.warhammer.wfrp.model.armors.InventoryArmor;
+import com.warhammer.wfrp.dto.armor.ArmorDto;
+import com.warhammer.wfrp.model.armor.Armor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,19 +9,19 @@ import java.util.List;
 @Service
 public class ArmorMapper {
     
-    public ArmorDto mapInventoryArmorToArmorDto(InventoryArmor inventoryArmor) {
-        return new ArmorDto(inventoryArmor.getType(),
-                            inventoryArmor.getName(),
-                            inventoryArmor.getWeight(),
-                            inventoryArmor.getPenalty(),
-                            inventoryArmor.getLocalization(),
-                            inventoryArmor.getPoints(),
-                            inventoryArmor.getTraits());
+    public ArmorDto mapArmorToArmorDto(Armor armor) {
+        return new ArmorDto(armor.getType(),
+                            armor.getName(),
+                            armor.getWeight(),
+                            armor.getPenalty(),
+                            armor.getLocalization(),
+                            armor.getPoints(),
+                            armor.getTraits());
     }
     
-    public List<ArmorDto> mapInventoryArmorListToArmorDtoList(List<InventoryArmor> list) {
+    public List<ArmorDto> mapArmorListToArmorDtoList(List<Armor> list) {
         return list.stream()
-                   .map(this::mapInventoryArmorToArmorDto)
+                   .map(this::mapArmorToArmorDto)
                    .toList();
     }
 }
