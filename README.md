@@ -34,7 +34,7 @@ Następujące funkcjonalności generatora wciąż czekają na implementację:
 - [ ] Dodanie pola pojemności dla ekwipunku do przechowywania
 - [ ] Możliwość wyświetlania tooltipa z opisem po najechaniu na nazwę wyposażenia
 
-### O projekcie
+## O projekcie
 Zapraszam do zapoznania się z moim finalnym projektem bootcampu Java Plus w Kodilli.
 Dalej będę posługiwał się określeniem ***generator*** zamiennie z ***projekt***.
 
@@ -60,6 +60,13 @@ Gdzie:
 cd "[LITERA_DYSKU]:\[FOLDER_PROJEKTU]\[FOLDER_GŁÓWNY_PAKIETU]"
 ```
 Pamiętaj, że Twoja ścieżka do mojego projektu może się różnić w zależności od tego gdzie ją umieściłeś.
+Teraz potrzebujesz uruchomionego Dockera, aby przejść dalej. Jeśli go nie posiadasz, to proszę zainstaluj. Póki co baza danych potrzebna do poprawnego działania generatora będzie umiejscowiona na Dockerze.
+Jeśli już masz Dockera na swoim systemie, wpisz następujące komendy w terminalu:
+```
+docker compose up -d
+```
+To spowoduje zainicjowanie wirtualnej bazy danych w Dockerze. Sprawdź, czy została poprawnie zainicjowana.
+
 Następnie sprawdź, czy posiadasz zainstalowany Gradle na swoim systemie. Możesz to zrobić otwierając terminal i wpisując:
 ```
 gradle -v
