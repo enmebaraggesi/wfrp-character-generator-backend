@@ -1,9 +1,5 @@
-package com.warhammer.wfrp.service;
+package com.warhammer.wfrp.armors;
 
-import com.warhammer.wfrp.dto.armor.ArmorDto;
-import com.warhammer.wfrp.mapper.ArmorMapper;
-import com.warhammer.wfrp.model.armor.Armor;
-import com.warhammer.wfrp.repository.armor.ArmorRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
