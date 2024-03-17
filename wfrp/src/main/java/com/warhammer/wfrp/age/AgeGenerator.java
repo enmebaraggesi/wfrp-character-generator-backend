@@ -1,5 +1,6 @@
-package com.warhammer.wfrp.engine;
+package com.warhammer.wfrp.age;
 
+import com.warhammer.wfrp.engine.DiceRoller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -11,9 +12,6 @@ public class AgeGenerator {
     
     public Integer generateAge(String race) {
         switch (race) {
-            default -> {
-                return 15 + diceRoller.rollK10(1);
-            }
             case "dwarfs" -> {
                 return 15 + diceRoller.rollK10(10);
             }
@@ -22,6 +20,9 @@ public class AgeGenerator {
             }
             case "helves", "velves" -> {
                 return 30 + diceRoller.rollK10(10);
+            }
+            default -> {
+                return 15 + diceRoller.rollK10(1);
             }
         }
     }

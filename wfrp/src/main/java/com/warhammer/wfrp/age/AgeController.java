@@ -1,7 +1,5 @@
-package com.warhammer.wfrp.controller;
+package com.warhammer.wfrp.age;
 
-import com.warhammer.wfrp.dto.appearance.AgeDto;
-import com.warhammer.wfrp.service.AgeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
