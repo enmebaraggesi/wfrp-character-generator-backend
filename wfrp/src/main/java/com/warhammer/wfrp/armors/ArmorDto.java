@@ -1,4 +1,4 @@
-package com.warhammer.wfrp.dto.armor;
+package com.warhammer.wfrp.armors;
 
 public record ArmorDto(String type,
                        String name,

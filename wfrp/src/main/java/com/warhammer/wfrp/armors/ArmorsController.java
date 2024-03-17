@@ -1,7 +1,5 @@
-package com.warhammer.wfrp.controller;
+package com.warhammer.wfrp.armors;
 
-import com.warhammer.wfrp.dto.armor.ArmorDto;
-import com.warhammer.wfrp.service.ArmorService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,4 +1,4 @@
-package com.warhammer.wfrp.model.armor;
+package com.warhammer.wfrp.armors;
 
 import jakarta.persistence.*;
 import lombok.Getter;
