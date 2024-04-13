@@ -1,4 +1,4 @@
-package com.warhammer.wfrp.dto.appearance;
+package com.warhammer.wfrp.eyes;
 
 public record EyeColorDto(String color) {
 

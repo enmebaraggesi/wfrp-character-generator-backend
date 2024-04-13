@@ -1,7 +1,5 @@
-package com.warhammer.wfrp.controller;
+package com.warhammer.wfrp.eyes;
 
-import com.warhammer.wfrp.dto.appearance.EyeColorDto;
-import com.warhammer.wfrp.service.EyeColorService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

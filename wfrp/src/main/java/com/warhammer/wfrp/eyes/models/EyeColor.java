@@ -1,4 +1,4 @@
-package com.warhammer.wfrp.model.eyes;
+package com.warhammer.wfrp.eyes.models;
 
 import jakarta.persistence.*;
 import lombok.Getter;

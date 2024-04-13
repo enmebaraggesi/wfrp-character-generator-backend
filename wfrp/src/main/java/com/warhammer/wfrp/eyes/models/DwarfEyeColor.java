@@ -1,4 +1,4 @@
-package com.warhammer.wfrp.model.eyes;
+package com.warhammer.wfrp.eyes.models;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -7,8 +7,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "HUMAN_EYE_COLOR")
-public class HumanEyeColor implements EyeColorInterface {
+@Table(name = "DWARF_EYE_COLOR")
+public class DwarfEyeColor implements EyeColorInterface {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
