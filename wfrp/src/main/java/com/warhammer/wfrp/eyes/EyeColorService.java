@@ -1,10 +1,8 @@
-package com.warhammer.wfrp.service;
+package com.warhammer.wfrp.eyes;
 
-import com.warhammer.wfrp.dto.appearance.EyeColorDto;
 import com.warhammer.wfrp.engine.DiceRoller;
-import com.warhammer.wfrp.mapper.EyeColorMapper;
-import com.warhammer.wfrp.model.eyes.*;
-import com.warhammer.wfrp.repository.eyes.*;
+import com.warhammer.wfrp.eyes.models.*;
+import com.warhammer.wfrp.eyes.repositories.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
