@@ -1,4 +1,4 @@
-package com.warhammer.wfrp.model.hair;
+package com.warhammer.wfrp.hair.models;
 
 public interface HairColorsInterface {
     
