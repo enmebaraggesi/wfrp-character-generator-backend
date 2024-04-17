@@ -1,8 +1,6 @@
-package com.warhammer.wfrp.controller;
+package com.warhammer.wfrp.professions;
 
 import com.warhammer.wfrp.dto.appearance.RaceDto;
-import com.warhammer.wfrp.dto.profession.ProfessionDto;
-import com.warhammer.wfrp.service.ProfessionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

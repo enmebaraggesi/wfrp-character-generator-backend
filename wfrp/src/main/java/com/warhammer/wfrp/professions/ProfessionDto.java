@@ -1,4 +1,4 @@
-package com.warhammer.wfrp.dto.profession;
+package com.warhammer.wfrp.professions;
 
 public record ProfessionDto(String classField,
                             String name,
