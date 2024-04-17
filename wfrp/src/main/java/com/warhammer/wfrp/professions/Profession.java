@@ -1,4 +1,4 @@
-package com.warhammer.wfrp.model.profession;
+package com.warhammer.wfrp.professions;
 
 import jakarta.persistence.*;
 import lombok.Getter;

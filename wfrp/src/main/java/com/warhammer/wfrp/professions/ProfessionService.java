@@ -1,12 +1,8 @@
-package com.warhammer.wfrp.service;
+package com.warhammer.wfrp.professions;
 
 import com.warhammer.wfrp.dto.appearance.RaceDto;
-import com.warhammer.wfrp.dto.profession.ProfessionDto;
 import com.warhammer.wfrp.engine.DiceRoller;
-import com.warhammer.wfrp.mapper.ProfessionsMapper;
 import com.warhammer.wfrp.mapper.RaceMapper;
-import com.warhammer.wfrp.model.profession.Profession;
-import com.warhammer.wfrp.repository.profession.ProfessionRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -32,30 +28,20 @@ public class ProfessionService {
         List<Profession> professions = repository.findAll();
         for (Profession profession : professions) {
             switch (raceMapper.mapRaceDtoToRaceName(raceDto)) {
-                case "Człowiek" -> {
-                    if (isAvailableForHuman(profession, result)) {
-                        return mapper.mapProfessionToProfessionDto(profession);
-                    }
-                }
                 case "Krasnolud" -> {
-                    if (isAvailableForDwarf(profession, result)) {
-                        return mapper.mapProfessionToProfessionDto(profession);
-                    }
+                    return isAvailableForDwarf(profession, result) ? mapper.mapProfessionToProfessionDto(profession) : null;
                 }
                 case "Niziołek" -> {
-                    if (isAvailableForHalfling(profession, result)) {
-                        return mapper.mapProfessionToProfessionDto(profession);
-                    }
+                    return isAvailableForHalfling(profession, result) ? mapper.mapProfessionToProfessionDto(profession) : null;
                 }
                 case "Wysoki elf" -> {
-                    if (isAvailableForHighElf(profession, result)) {
-                        return mapper.mapProfessionToProfessionDto(profession);
-                    }
+                    return isAvailableForHighElf(profession, result) ? mapper.mapProfessionToProfessionDto(profession) : null;
                 }
                 case "Leśny elf" -> {
-                    if (isAvailableForWoodElf(profession, result)) {
-                        return mapper.mapProfessionToProfessionDto(profession);
-                    }
+                    return isAvailableForWoodElf(profession, result) ? mapper.mapProfessionToProfessionDto(profession) : null;
+                }
+                default -> {
+                    return isAvailableForHuman(profession, result) ? mapper.mapProfessionToProfessionDto(profession) : null;
                 }
             }
         }

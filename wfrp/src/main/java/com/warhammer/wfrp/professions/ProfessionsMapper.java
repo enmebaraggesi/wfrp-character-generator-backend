@@ -1,7 +1,5 @@
-package com.warhammer.wfrp.mapper;
+package com.warhammer.wfrp.professions;
 
-import com.warhammer.wfrp.dto.profession.ProfessionDto;
-import com.warhammer.wfrp.model.profession.Profession;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
