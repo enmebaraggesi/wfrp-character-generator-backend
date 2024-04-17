@@ -1,7 +1,5 @@
-package com.warhammer.wfrp.controller;
+package com.warhammer.wfrp.height;
 
-import com.warhammer.wfrp.dto.appearance.HeightDto;
-import com.warhammer.wfrp.service.HeightService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

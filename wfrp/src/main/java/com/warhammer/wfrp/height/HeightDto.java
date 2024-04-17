@@ -1,4 +1,4 @@
-package com.warhammer.wfrp.dto.appearance;
+package com.warhammer.wfrp.height;
 
 public record HeightDto(String height) {
 

@@ -1,6 +1,5 @@
-package com.warhammer.wfrp.mapper;
+package com.warhammer.wfrp.height;
 
-import com.warhammer.wfrp.dto.appearance.HeightDto;
 import org.springframework.stereotype.Service;
 
 @Service
