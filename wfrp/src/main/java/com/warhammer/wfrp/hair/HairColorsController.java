@@ -1,7 +1,5 @@
-package com.warhammer.wfrp.controller;
+package com.warhammer.wfrp.hair;
 
-import com.warhammer.wfrp.dto.appearance.HairColorDto;
-import com.warhammer.wfrp.service.HairColorService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

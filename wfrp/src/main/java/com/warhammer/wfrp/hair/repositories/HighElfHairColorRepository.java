@@ -1,6 +1,6 @@
-package com.warhammer.wfrp.repository.hair;
+package com.warhammer.wfrp.hair.repositories;
 
-import com.warhammer.wfrp.model.hair.HighElfHairColor;
+import com.warhammer.wfrp.hair.models.HighElfHairColor;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface HighElfHairColorRepository extends JpaRepository<HighElfHairColor, Integer> {

@@ -1,10 +1,8 @@
-package com.warhammer.wfrp.service;
+package com.warhammer.wfrp.hair;
 
-import com.warhammer.wfrp.dto.appearance.HairColorDto;
 import com.warhammer.wfrp.engine.DiceRoller;
-import com.warhammer.wfrp.mapper.HairColorMapper;
-import com.warhammer.wfrp.model.hair.*;
-import com.warhammer.wfrp.repository.hair.*;
+import com.warhammer.wfrp.hair.models.*;
+import com.warhammer.wfrp.hair.repositories.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

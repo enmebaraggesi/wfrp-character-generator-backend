@@ -1,7 +1,6 @@
-package com.warhammer.wfrp.mapper;
+package com.warhammer.wfrp.hair;
 
-import com.warhammer.wfrp.dto.appearance.HairColorDto;
-import com.warhammer.wfrp.model.hair.HairColorsInterface;
+import com.warhammer.wfrp.hair.models.HairColorsInterface;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
