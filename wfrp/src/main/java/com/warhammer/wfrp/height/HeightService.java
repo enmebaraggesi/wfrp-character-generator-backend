@@ -1,8 +1,6 @@
-package com.warhammer.wfrp.service;
+package com.warhammer.wfrp.height;
 
-import com.warhammer.wfrp.dto.appearance.HeightDto;
 import com.warhammer.wfrp.engine.HeightGenerator;
-import com.warhammer.wfrp.mapper.HeightMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
