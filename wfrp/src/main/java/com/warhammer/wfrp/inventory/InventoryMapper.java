@@ -1,7 +1,5 @@
-package com.warhammer.wfrp.mapper;
+package com.warhammer.wfrp.inventory;
 
-import com.warhammer.wfrp.dto.inventory.InventoryDto;
-import com.warhammer.wfrp.model.inventory.Inventory;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

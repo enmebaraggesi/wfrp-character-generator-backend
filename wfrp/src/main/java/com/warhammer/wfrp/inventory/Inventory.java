@@ -1,4 +1,4 @@
-package com.warhammer.wfrp.model.inventory;
+package com.warhammer.wfrp.inventory;
 
 import jakarta.persistence.*;
 import lombok.Getter;
