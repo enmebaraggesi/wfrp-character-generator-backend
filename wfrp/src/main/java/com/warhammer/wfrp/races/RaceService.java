@@ -1,10 +1,6 @@
-package com.warhammer.wfrp.service;
+package com.warhammer.wfrp.races;
 
-import com.warhammer.wfrp.dto.appearance.RaceDto;
 import com.warhammer.wfrp.engine.DiceRoller;
-import com.warhammer.wfrp.mapper.RaceMapper;
-import com.warhammer.wfrp.model.race.Race;
-import com.warhammer.wfrp.repository.race.RaceRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
