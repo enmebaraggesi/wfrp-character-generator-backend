@@ -1,12 +1,8 @@
-package com.warhammer.wfrp.service;
+package com.warhammer.wfrp.talents;
 
-import com.warhammer.wfrp.dto.talent.TalentDto;
 import com.warhammer.wfrp.engine.DiceRoller;
-import com.warhammer.wfrp.mapper.TalentMapper;
-import com.warhammer.wfrp.model.talent.Talent;
-import com.warhammer.wfrp.model.talent.TalentRoll;
-import com.warhammer.wfrp.repository.talent.TalentRepository;
-import com.warhammer.wfrp.repository.talent.TalentRollRepository;
+import com.warhammer.wfrp.talents.roll.TalentRoll;
+import com.warhammer.wfrp.talents.roll.TalentRollRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

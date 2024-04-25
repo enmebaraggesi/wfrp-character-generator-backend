@@ -1,5 +1,6 @@
-package com.warhammer.wfrp.model.talent;
+package com.warhammer.wfrp.talents.roll;
 
+import com.warhammer.wfrp.talents.Talent;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

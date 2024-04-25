@@ -1,7 +1,5 @@
-package com.warhammer.wfrp.mapper;
+package com.warhammer.wfrp.talents;
 
-import com.warhammer.wfrp.dto.talent.TalentDto;
-import com.warhammer.wfrp.model.talent.Talent;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
