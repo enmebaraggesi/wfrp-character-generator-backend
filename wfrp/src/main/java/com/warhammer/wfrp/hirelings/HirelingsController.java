@@ -1,4 +1,4 @@
-package com.warhammer.wfrp.inventory;
+package com.warhammer.wfrp.hirelings;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,12 +8,12 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-public class InventoryController {
+public class HirelingsController {
     
-    private final InventoryService service;
+    private final HirelingsService service;
     
-    @GetMapping("/inventory")
-    public List<InventoryDto> getAllInventory() {
-        return service.getAllInventoryList();
+    @GetMapping("/hirelings")
+    public List<HirelingsDto> getAllHirelings() {
+        return service.getAllHirelingsList();
     }
 }
