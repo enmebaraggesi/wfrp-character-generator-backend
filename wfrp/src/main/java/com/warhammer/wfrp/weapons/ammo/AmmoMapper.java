@@ -1,13 +1,11 @@
-package com.warhammer.wfrp.mapper;
+package com.warhammer.wfrp.weapons.ammo;
 
-import com.warhammer.wfrp.dto.weapon.AmmoDto;
-import com.warhammer.wfrp.model.weapon.Ammo;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class AmmunitionMapper {
+public class AmmoMapper {
     
     public AmmoDto mapAmmoToAmmoDto(Ammo ammo) {
         return new AmmoDto(ammo.getType(),

@@ -1,7 +1,5 @@
-package com.warhammer.wfrp.mapper;
+package com.warhammer.wfrp.weapons;
 
-import com.warhammer.wfrp.dto.weapon.WeaponDto;
-import com.warhammer.wfrp.model.weapon.Weapon;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.warhammer.wfrp.dto.weapon;
+package com.warhammer.wfrp.weapons.ammo;
 
 public record AmmoDto(String type,
                       String name,

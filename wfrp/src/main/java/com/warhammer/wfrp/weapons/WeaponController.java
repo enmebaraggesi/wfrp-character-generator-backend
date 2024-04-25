@@ -1,8 +1,6 @@
-package com.warhammer.wfrp.controller;
+package com.warhammer.wfrp.weapons;
 
-import com.warhammer.wfrp.dto.weapon.AmmoDto;
-import com.warhammer.wfrp.dto.weapon.WeaponDto;
-import com.warhammer.wfrp.service.WeaponService;
+import com.warhammer.wfrp.weapons.ammo.AmmoDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-public class WeaponsController {
+public class WeaponController {
     
     private final WeaponService service;
     

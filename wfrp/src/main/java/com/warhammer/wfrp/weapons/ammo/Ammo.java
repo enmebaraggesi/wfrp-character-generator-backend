@@ -1,4 +1,4 @@
-package com.warhammer.wfrp.model.weapon;
+package com.warhammer.wfrp.weapons.ammo;
 
 import jakarta.persistence.*;
 import lombok.Getter;
