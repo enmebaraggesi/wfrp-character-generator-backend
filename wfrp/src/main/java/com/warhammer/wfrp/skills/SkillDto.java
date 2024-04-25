@@ -1,4 +1,4 @@
-package com.warhammer.wfrp.dto.skill;
+package com.warhammer.wfrp.skills;
 
 public record SkillDto(String name,
                        String attribute,

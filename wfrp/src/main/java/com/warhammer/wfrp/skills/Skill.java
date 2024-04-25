@@ -1,4 +1,4 @@
-package com.warhammer.wfrp.model.skill;
+package com.warhammer.wfrp.skills;
 
 import jakarta.persistence.*;
 import lombok.Getter;

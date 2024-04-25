@@ -1,7 +1,5 @@
-package com.warhammer.wfrp.mapper;
+package com.warhammer.wfrp.skills;
 
-import com.warhammer.wfrp.dto.skill.SkillDto;
-import com.warhammer.wfrp.model.skill.Skill;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

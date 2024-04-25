@@ -1,6 +1,5 @@
-package com.warhammer.wfrp.repository.skill;
+package com.warhammer.wfrp.skills;
 
-import com.warhammer.wfrp.model.skill.Skill;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
