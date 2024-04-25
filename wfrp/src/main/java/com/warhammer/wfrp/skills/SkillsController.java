@@ -1,7 +1,5 @@
-package com.warhammer.wfrp.controller;
+package com.warhammer.wfrp.skills;
 
-import com.warhammer.wfrp.dto.skill.SkillDto;
-import com.warhammer.wfrp.service.SkillService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

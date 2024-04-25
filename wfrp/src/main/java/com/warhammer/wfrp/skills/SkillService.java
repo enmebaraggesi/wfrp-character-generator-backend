@@ -1,9 +1,5 @@
-package com.warhammer.wfrp.service;
+package com.warhammer.wfrp.skills;
 
-import com.warhammer.wfrp.dto.skill.SkillDto;
-import com.warhammer.wfrp.mapper.SkillMapper;
-import com.warhammer.wfrp.model.skill.Skill;
-import com.warhammer.wfrp.repository.skill.SkillRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
