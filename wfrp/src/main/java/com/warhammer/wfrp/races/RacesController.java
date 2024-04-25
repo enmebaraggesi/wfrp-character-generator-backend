@@ -1,7 +1,5 @@
-package com.warhammer.wfrp.controller;
+package com.warhammer.wfrp.races;
 
-import com.warhammer.wfrp.dto.appearance.RaceDto;
-import com.warhammer.wfrp.service.RaceService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

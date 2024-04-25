@@ -1,8 +1,8 @@
 package com.warhammer.wfrp.professions;
 
-import com.warhammer.wfrp.dto.appearance.RaceDto;
 import com.warhammer.wfrp.engine.DiceRoller;
-import com.warhammer.wfrp.mapper.RaceMapper;
+import com.warhammer.wfrp.races.RaceDto;
+import com.warhammer.wfrp.races.RaceMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

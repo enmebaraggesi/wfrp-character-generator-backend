@@ -1,7 +1,5 @@
-package com.warhammer.wfrp.mapper;
+package com.warhammer.wfrp.races;
 
-import com.warhammer.wfrp.dto.appearance.RaceDto;
-import com.warhammer.wfrp.model.race.Race;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
