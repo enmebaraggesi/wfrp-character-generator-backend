@@ -1,4 +1,4 @@
-package com.warhammer.wfrp.model.inventory;
+package com.warhammer.wfrp.hirelings;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -8,7 +8,7 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "INVENTORY_HIRELINGS")
-public class Hireling {
+public class Hirelings {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
