@@ -1,13 +1,9 @@
-package com.warhammer.wfrp.service;
+package com.warhammer.wfrp.inventory;
 
 import com.warhammer.wfrp.dto.inventory.HirelingDto;
-import com.warhammer.wfrp.dto.inventory.InventoryDto;
 import com.warhammer.wfrp.mapper.HirelingMapper;
-import com.warhammer.wfrp.mapper.InventoryMapper;
 import com.warhammer.wfrp.model.inventory.Hireling;
-import com.warhammer.wfrp.model.inventory.Inventory;
 import com.warhammer.wfrp.repository.inventory.HirelingRepository;
-import com.warhammer.wfrp.repository.inventory.InventoryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.warhammer.wfrp.dto.inventory;
+package com.warhammer.wfrp.inventory;
 
 public record InventoryDto(String type,
                            String name,
