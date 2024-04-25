@@ -1,6 +1,5 @@
-package com.warhammer.wfrp.repository.talent;
+package com.warhammer.wfrp.talents.roll;
 
-import com.warhammer.wfrp.model.talent.TalentRoll;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface TalentRollRepository extends JpaRepository<TalentRoll, Integer> {

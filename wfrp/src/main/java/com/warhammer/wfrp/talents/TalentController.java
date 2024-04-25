@@ -1,7 +1,5 @@
-package com.warhammer.wfrp.controller;
+package com.warhammer.wfrp.talents;
 
-import com.warhammer.wfrp.dto.talent.TalentDto;
-import com.warhammer.wfrp.service.TalentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,7 +8,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("talents")
-public class TalentsController {
+public class TalentController {
     
     private final TalentService service;
     
