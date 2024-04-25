@@ -1,13 +1,6 @@
-package com.warhammer.wfrp.service;
+package com.warhammer.wfrp.weapons;
 
-import com.warhammer.wfrp.dto.weapon.AmmoDto;
-import com.warhammer.wfrp.dto.weapon.WeaponDto;
-import com.warhammer.wfrp.mapper.AmmunitionMapper;
-import com.warhammer.wfrp.mapper.WeaponMapper;
-import com.warhammer.wfrp.model.weapon.Ammo;
-import com.warhammer.wfrp.model.weapon.Weapon;
-import com.warhammer.wfrp.repository.weapon.AmmoRepository;
-import com.warhammer.wfrp.repository.weapon.WeaponRepository;
+import com.warhammer.wfrp.weapons.ammo.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -19,12 +12,12 @@ public class WeaponService {
     
     private final AmmoRepository ammoRepository;
     private final WeaponRepository weaponRepository;
-    private final AmmunitionMapper ammunitionMapper;
+    private final AmmoMapper ammoMapper;
     private final WeaponMapper weaponMapper;
     
     public List<AmmoDto> getAllAmmoList() {
         List<Ammo> ammo = ammoRepository.findAll();
-        return ammunitionMapper.mapAmmoListToAmmoDtoList(ammo);
+        return ammoMapper.mapAmmoListToAmmoDtoList(ammo);
     }
     
     public List<WeaponDto> getAllWeaponsList() {
